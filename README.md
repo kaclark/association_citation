@@ -12,6 +12,7 @@ TODO: <br>
 [ ] Write data structure to store tweets in <br> 
 [ ] Parse Tweets <br>
 [ ] Pull Tweets from my account <br>
+[ ] (@index.html) Move Style into a .css file 
 [x] Set up Developer Account <br>
 [x] Get API to post tweet <br>
 [x] Set up Github.io page <br> 
