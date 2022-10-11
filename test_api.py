@@ -1,5 +1,6 @@
 #EXAMPLE CODE FROM TWITTER DEV: https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/main/Tweet-Lookup/get_tweets_with_bearer_token.py
 
+
 import requests
 import os
 import json
