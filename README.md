@@ -1,4 +1,6 @@
 # association_citation
+<i>This readme is configured to assist in the development process. Please see website for overview of project</i><br><br>
+
 App site(Github.io): <br> 
 https://kaclark.github.io/association_citation/
 
