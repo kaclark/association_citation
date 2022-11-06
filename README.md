@@ -10,7 +10,10 @@ https://github.com/twitterdev/Twitter-API-v2-sample-code <br>
 https://developer.twitter.com/en <br>
 
 TODO: <br>
-[ ] Add snippets from Parisi's Abstract Sex as a demo template
+[ ] Create Comment Section for each quote, scroll effect, social-media style
+[ ] Link to [Parisi]Abstract Sex
+[ ] Generate Bookshelf on Webpage
+[x] Add snippets from Parisi's Abstract Sex as a demo template <br>
 [Frozen][ ] Establish paradigm for parsing tweets and establishing relations thereby <br>
 [Frozen][ ] Write data structure to store tweets in <br> 
 [Frozen][ ] Parse Tweets <br>
