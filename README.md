@@ -1,5 +1,8 @@
 # association_citation
 
+Main Site(Github.io): <br> 
+https://kaclark.github.io/association_citation/<br>
+
 This project will grow to become a wiki with pdfs as the datums around which each page is to be organized <br>
 Major Goals: <br>
 [ ] Digital Bookshelf <br>
@@ -9,8 +12,6 @@ Major Goals: <br>
 [ ] Graph representation of how wiki pages are linked <br>
 [ ] User accounts for saving simple profile info(liked pages, note journal, twitter notetaking integration) <br>
 
-Main Site(Github.io): <br> 
-https://kaclark.github.io/association_citation/
 
 Resources for twitter API: <br>
 https://towardsdatascience.com/an-extensive-guide-to-collecting-tweets-from-twitter-api-v2-for-academic-research-using-python-3-518fcb71df2a <br>
