@@ -19,9 +19,11 @@ https://developer.twitter.com/en <br>
 https://github.com/orakaro/rainbowstream <br>
 
 TODO: <br>
-[ ] Design Terminal Application for engaging with texts (developer-mode) <br>
-[ ] Create Comment Section for each pdf-page, scroll effect, social-media style (user-mode) <br>
+[ ] Page Search (Hashtag system for simplicity) <br>
+[ ] Create Comment Section for each pdf-page <br>
+[ ] Create Information Section for each pdf-page <br>
 [ ] Generate Bookshelf on Webpage (user-mode) <br> 
+[x] python pdf parsing and display from url <br>
 [x] Add snippets from Parisi's Abstract Sex as a demo template <br>
 [Frozen][ ] Establish paradigm for parsing tweets and establishing relations thereby(use rainbowstream) <br>
 [Frozen][ ] Write data structure to store tweets in (use rainbowstream)<br> 
@@ -33,7 +35,6 @@ TODO: <br>
 [x] Set up Github.io page <br> 
 [x] Locate Documentation <br>
 [x] Locate Example Code <br>
-[x] Establish Mission Statement <br>
 
 
 
