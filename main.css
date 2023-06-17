@@ -11,7 +11,6 @@ body {
     background-color: white;
     box-shadow: 0px 0px 10px #999;
     border-radius: 15px;
-    display: block;
 }
 
 .contentblock {
@@ -27,6 +26,10 @@ body {
     vertical-align: top;
     box-shadow: 0px 0px 10px #999;
     border-radius: 15px;
+}
+
+.teaser_box {
+    margin: 0 auto;
 }
 
 a,
