@@ -59,6 +59,12 @@ h2 {
     font-size: 30px;
     font-weight: 300;
 }
+
+h3 {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+}
 h5 {
     font-size: 10px;
     font-weight: 300;
