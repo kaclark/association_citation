@@ -1,24 +1,32 @@
 # association_citation
-<i>This readme is configured to assist in the development process. Please see website for overview of project</i><br><br>
 
-App site(Github.io): <br> 
+This project will grow to become a wiki with pdfs as the datums around which each page is to be organized <br>
+Major Goals: <br>
+[ ] Digital Bookshelf
+[ ] In-site reading capacity
+[ ] Tweet highlights(with auto-citation, and highlighting for character limit)
+[ ] Wiki page for each Book/Paper
+[ ] Graph representation of how wiki pages are linked
+[ ] User accounts for saving simple profile info(liked pages, note journal, twitter notetaking integration)
+
+Main Site(Github.io): <br> 
 https://kaclark.github.io/association_citation/
 
-Resources: <br>
+Resources for twitter API: <br>
 https://towardsdatascience.com/an-extensive-guide-to-collecting-tweets-from-twitter-api-v2-for-academic-research-using-python-3-518fcb71df2a <br>
 https://github.com/twitterdev/Twitter-API-v2-sample-code <br>
 https://developer.twitter.com/en <br>
+https://github.com/orakaro/rainbowstream <br>
 
 TODO: <br>
 [ ] Design Terminal Application for engaging with texts (developer-mode) <br>
-[ ] Create Comment Section for each quote, scroll effect, social-media style (user-mode) <br>
-[ ] Link to [Parisi]Abstract Sex <br>
+[ ] Create Comment Section for each pdf-page, scroll effect, social-media style (user-mode) <br>
 [ ] Generate Bookshelf on Webpage (user-mode) <br> 
 [x] Add snippets from Parisi's Abstract Sex as a demo template <br>
-[Frozen][ ] Establish paradigm for parsing tweets and establishing relations thereby <br>
-[Frozen][ ] Write data structure to store tweets in <br> 
-[Frozen][ ] Parse Tweets <br>
-[Frozen][ ] Pull Tweets from my account <br>
+[Frozen][ ] Establish paradigm for parsing tweets and establishing relations thereby(use rainbowstream) <br>
+[Frozen][ ] Write data structure to store tweets in (use rainbowstream)<br> 
+[Frozen][ ] Parse Tweets (use rainbowstream) <br>
+[Frozen][ ] Pull Tweets from my account (use rainbowstream)<br>
 [x] (@index.html) Move Style into a .css file <br> 
 [x] Set up Developer Account <br>
 [x] Get API to post tweet <br>
