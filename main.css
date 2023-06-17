@@ -197,7 +197,10 @@ p code {
 }
 
 .teaser-img {
-    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
 
 .iframe {
