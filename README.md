@@ -5,7 +5,7 @@ https://kaclark.github.io/association_citation/<br>
 
 This project will grow to become a wiki with pdfs as the datums around which each page is to be organized <br>
 Major Goals: <br>
-[ ] Digital Bookshelf <br>
+[x] Digital Bookshelf <br>
 [ ] In-site reading capacity <br>
 [ ] Tweet highlights(with auto-citation, and highlighting for character limit) <br>
 [ ] Wiki page for each Book/Paper <br>
