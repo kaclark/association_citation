@@ -24,6 +24,7 @@ TODO: <br>
 [ ] Create Comment Section for each pdf-page <br>
 [ ] Create Information Section for each pdf-page <br>
 [ ] Generate Bookshelf on Webpage (user-mode) <br> 
+[x] (Data Structure) Wiki concept class
 [x] python pdf parsing and display from url <br>
 [x] Add snippets from Parisi's Abstract Sex as a demo template <br>
 [Frozen][ ] Establish paradigm for parsing tweets and establishing relations thereby(use rainbowstream) <br>
