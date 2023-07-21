@@ -41,7 +41,7 @@ def gen_banner():
 	<div class='teaser-box'>
 	<img class='teaser-img' src='include/img/pixel_book.jpg'></img>
 	</div>
-	<h2>Stage 1: Digital Library<h2>
+	<h2>Stage 2: Digital Library<h2>
     </div>
     '''
 
@@ -64,14 +64,14 @@ def gen_download_p(displayname, link, codename):
     nlink = "routes/" + codename + ".html"
     rlink = "readable/" + codename + ".html"
     return f'''<a href={link} download={displayname}>{displayname}</a>
-        <a href={nlink}><p>Highlight Stream📄</p></a>
-        <a href={rlink}><p>Read Online📄</p></a>
+        <a href={nlink}><p style="text-align:right">Highlight Stream</p></a>
+        <a href={rlink}><p style="text-align:right">Read Online</p></a>
         <br>'''
 
 def strip_underscores(blurb):
     return " ".join(blurb.split("_"))
 
-def generate_readable(pageout, URL):
+def gen_readable(pageout, URL):
     print(URL)
     def remove_newlines(raw_text):
         return " ".join(raw_text.split("\n"))
@@ -83,16 +83,18 @@ def generate_readable(pageout, URL):
 
     output_html = ""
     output_html += gen_head("PDF VIEWER", wtype="readable")
+    output_html += "<div class='content' id='content'>"
     for i in range(len(pdfdoc.pages)):
         output_html += gen_readp(remove_newlines(pdfdoc.pages[i].extract_text()))
         output_html += gen_pagenum(str(i))
+    output_html += "</div>"
     output_html += gen_tail()
 
     with open("readable/" + pageout + ".html", "w") as html_out:
         html_out.write(output_html)
 
 
-def generate_wiki_page(codename):
+def gen_wiki_page(codename):
     wiki = ""
     wiki += gen_head(codename, wtype="wiki")
     wiki += gen_p(strip_underscores(codename))
@@ -121,19 +123,18 @@ def gen_book_table():
     with open("include/main_table_data.csv", "r") as table_data:
         for line in [l.split("\n")[0] for l in table_data.readlines()]:
             name, link, text_type, codename = line.split(",")
-            print(name, text_type)
             table_content[text_type].append((name, link, codename))
-            generate_wiki_page(codename)
+            gen_wiki_page(codename)
             #TODO: make conditional generation and uncoment
-            #generate_readable(codename, link)
+            #gen_readable(codename, link)
     
-    table += "<h4>Papers</h4>"
+    table += "<h1>Papers</h1>"
     for paper_data in table_content["paper"]:
         table += gen_download_p(paper_data[0], paper_data[1], paper_data[2])
-    table += "<h4>Dissertations</h4>"
+    table += "<h1>Dissertations</h1>"
     for dissertation_data in table_content["dissertation"]:
         table += gen_download_p(dissertation_data[0], dissertation_data[1], dissertation_data[2])
-    table += "<h4>Books</h4>"
+    table += "<h1>Books</h1>"
     for book_data in table_content["book"]:
         table += gen_download_p(book_data[0], book_data[1], book_data[2])
     table += "</div>"
