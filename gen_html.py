@@ -130,7 +130,7 @@ def gen_book_table():
             table_content[text_type].append((name, link, codename))
             gen_wiki_page(codename)
             #TODO: make conditional generation and uncoment
-            gen_readable(codename, link)
+            #gen_readable(codename, link)
     
     table += "<h1>Papers</h1>"
     for paper_data in table_content["paper"]:

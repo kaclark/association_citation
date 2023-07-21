@@ -6,7 +6,7 @@ https://kaclark.github.io/association_citation/<br>
 This project is a wiki-library that generates itself from my reading notes. I hope to make texts and my hihglights of texts avaiable in a digital bookshelf
 
 Major Goals: <br>
-[ ] Wiki page for each Book/Paper (Primed) <br>
+[ ] Wiki page for each Book/Paper/Author (Primed) <br>
 [x] In-site reading capacity<br>
 [x] Highlight stream page<br>
 [x] Digital Bookshelf <br>
