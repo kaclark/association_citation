@@ -12,7 +12,6 @@ Major Goals: <br>
 [x] Digital Bookshelf <br>
 
 TODO: <br>
-[ ] ctrl-f type feature<br>
 [x] Generate Bookshelf on Webpage<br>
 [x] Output Notes to webpages<br>
 [x] Output Index to webpage from python<br>
