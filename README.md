@@ -14,6 +14,7 @@ TODO: <br>
 [ ] ctrl-f type feature<br>
 [ ] Generate Bookshelf on Webpage (Primed) <br>
 [ ] Output Notes to webpages (Primed)<br>
+[x] Output Index to webpage from python<br>
 [x] (Data Structure) workout textfile format convention to load notes and annotations from csv type data structure to reduce code bloat<br>
 [x] (Data Structure) Basic datastructure testing(Bergson, Intution)<br>
 [x] (Data Structure) Wiki concept class<br>
