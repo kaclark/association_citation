@@ -20,10 +20,12 @@ https://developer.twitter.com/en <br>
 https://github.com/orakaro/rainbowstream <br>
 
 TODO: <br>
+
 [ ] Page Search (Hashtag system for simplicity) <br>
 [ ] Create Comment Section for each pdf-page <br>
 [ ] Create Information Section for each pdf-page <br>
 [ ] Generate Bookshelf on Webpage (user-mode) <br>
+[x] (Data Structure) workout textfile format convention to load notes and annotations from csv type data structure to reduce code bloat<br>
 [x] (Data Structure) Basic datastructure testing(Bergson, Intution)<br>
 [x] (Data Structure) Wiki concept class<br>
 [x] python pdf parsing and display from url <br>
