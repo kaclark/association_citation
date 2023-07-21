@@ -39,7 +39,7 @@ def gen_tail():
 
 def gen_download_p(displayname, link, codename):
     nlink = "routes/" + codename + ".html"
-    return f'<a href={link} download={displayname}><p class="maintable">{displayname}</p></a><a href={nlink}><p>📄</p></a><br>'
+    return f'<span><a href={link} download={displayname}><p class="maintable">{displayname}</p></a><a href={nlink}><p>📄</p></a></span><br>'
 
 def generate_wiki_page(codename):
     wiki = ""
