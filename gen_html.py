@@ -29,7 +29,7 @@ def gen_head(title, wtype="main"):
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>{title}</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../include/textflow.css"/>
+        <link rel="stylesheet" type="text/css" href="../include/main.css"/>
         </head>
         <body>
         '''
