@@ -74,7 +74,8 @@ def strip_underscores(blurb):
 def gen_readable(pageout, URL):
     print(URL)
     def remove_newlines(raw_text):
-        return " ".join(raw_text.split("\n"))
+        split_lines = raw_text.split("\n")
+        return (split_lines[0]," ".join(split_lines[1:-1]), split_lines[-1])
                 
     req = urllib.request.Request(URL, headers={'User-Agent' : "Magic Browser"})
     remote_file = urllib.request.urlopen(req).read()
@@ -85,8 +86,11 @@ def gen_readable(pageout, URL):
     output_html += gen_head("PDF VIEWER", wtype="readable")
     output_html += "<div class='content' id='content'>"
     for i in range(len(pdfdoc.pages)):
-        output_html += gen_readp(remove_newlines(pdfdoc.pages[i].extract_text()))
-        output_html += gen_pagenum(str(i))
+        page_data = remove_newlines(pdfdoc.pages[i].extract_text())
+        output_html += gen_pagenum(str(page_data[0]))
+        output_html += gen_readp(str(page_data[1]))
+        output_html += gen_pagenum(str(page_data[2]))
+
     output_html += "</div>"
     output_html += gen_tail()
 
@@ -126,7 +130,7 @@ def gen_book_table():
             table_content[text_type].append((name, link, codename))
             gen_wiki_page(codename)
             #TODO: make conditional generation and uncoment
-            #gen_readable(codename, link)
+            gen_readable(codename, link)
     
     table += "<h1>Papers</h1>"
     for paper_data in table_content["paper"]:
