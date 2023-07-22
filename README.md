@@ -3,9 +3,10 @@
 Main Site(Github.io): <br> 
 https://kaclark.github.io/association_citation/<br>
 
-This project is a wiki-library that generates itself from texts and my hihglights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. 
+This project is a wiki-library that generates itself from texts and my hihglights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. I will organize my reading and eventually writing via recourse to this project.  
 
 Major Goals: <br>
+[ ] (Corpus) Output writing with glossory from bound ids<br>
 [ ] Wiki page for each Book/Paper/Author (Primed) <br>
 [ ] Wiki search function<br>
 [ ] Display all wiki pages in large table<br>
@@ -16,11 +17,12 @@ Major Goals: <br>
 Reading Goals<br>
 [ ] (Truth and Method) record Concept("bildung")<br>
 [ ] (Truth and Method) record Concept("common sense")<br>
+[ ] (Truth and Method) record Author("Oetinger")<br>
 
 TODO: <br>
 [ ] make book wiki page(concepts, highlights, summary) (Primed)<br>
 [ ] make wiki navigation bar(tabs)<br>
-[ ] Add Bergson's Introduction to Metaphysics<br>
+[ ] (Index) Add Bergson's Introduction to Metaphysics<br>
 [x] Generate Bookshelf on Webpage<br>
 [x] Output Notes to webpages<br>
 [x] Output Index to webpage from python<br>
