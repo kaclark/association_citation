@@ -11,6 +11,7 @@ Major Goals: <br>
 [ ] Wiki search function<br>
 [ ] Display all wiki pages in large table<br>
 [ ] pyscript integration https://realpython.com/pyscript-python-in-browser/ <br>
+[ ] recreate in reactpy https://www.w3schools.com/w3css/w3css_tabulators.asp <br>
 [x] In-site reading capacity<br>
 [x] Highlight stream page<br>
 [x] Digital Bookshelf <br>
