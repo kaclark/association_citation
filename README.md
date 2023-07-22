@@ -10,6 +10,7 @@ Major Goals: <br>
 [ ] Wiki page for each Book/Paper/Author (Primed) <br>
 [ ] Wiki search function<br>
 [ ] Display all wiki pages in large table<br>
+[ ] pyscript integration https://realpython.com/pyscript-python-in-browser/ <br>
 [x] In-site reading capacity<br>
 [x] Highlight stream page<br>
 [x] Digital Bookshelf <br>
