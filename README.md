@@ -16,6 +16,8 @@ Major Goals: <br>
 
 Reading Goals<br>
 [ ] (Bergson Metaphysics) Move highlights into notes<br>
+[ ] (Bergson and Plotinus) record Author("Plotinus")<br>
+[ ] (Truth and Method) record Author("Hegel")<br>
 [ ] (Truth and Method) record Concept("bildung")<br>
 [ ] (Truth and Method) record Concept("common sense")<br>
 [ ] (Truth and Method) record Author("Oetinger")<br>
