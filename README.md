@@ -18,6 +18,7 @@ Reading Goals<br>
 [ ] (Truth and Method) record Concept("bildung")<br>
 [ ] (Truth and Method) record Concept("common sense")<br>
 [ ] (Truth and Method) record Author("Oetinger")<br>
+[ ] (Truth and Method) record Concept("taste")<br>
 
 TODO: <br>
 [ ] make book wiki page(concepts, highlights, summary) (Primed)<br>

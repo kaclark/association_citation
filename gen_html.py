@@ -3,6 +3,7 @@ import tempfile
 import urllib.request
 import PyPDF2
 import io
+import os
 
 def gen_head(title, wtype="main"): 
     if wtype == "main":
@@ -102,8 +103,6 @@ def gen_wiki_page(codename):
     wiki = ""
     wiki += gen_head(codename, wtype="wiki")
     wiki += gen_p(strip_underscores(codename))
-    #for each note entry, add a p
-    #TODO: lookup codename + ".note"; if fail, gen new
     try:
         with open("include/notes/" + codename + ".note", "r") as note_in:
             for line in [l.split("\n")[0] for l in note_in.readlines()]:
@@ -130,7 +129,8 @@ def gen_book_table():
             table_content[text_type].append((name, link, codename))
             gen_wiki_page(codename)
             #TODO: make conditional generation and uncoment
-            #gen_readable(codename, link)
+            if not os.path.isfile("readable/" + codename + ".html"):
+                gen_readable(codename, link)
     
     table += "<h1>Papers</h1>"
     for paper_data in table_content["paper"]:
