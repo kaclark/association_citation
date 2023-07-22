@@ -84,7 +84,7 @@ def gen_readable(pageout, URL):
     pdfdoc = PyPDF2.PdfReader(remote_file_bytes)
 
     output_html = ""
-    output_html += gen_head("PDF VIEWER", wtype="readable")
+    output_html += gen_head(strip_underscores(pageout), wtype="readable")
     output_html += "<div class='content' id='content'>"
     for i in range(len(pdfdoc.pages)):
         page_data = remove_newlines(pdfdoc.pages[i].extract_text())
@@ -128,7 +128,6 @@ def gen_book_table():
             name, link, text_type, codename = line.split(",")
             table_content[text_type].append((name, link, codename))
             gen_wiki_page(codename)
-            #TODO: make conditional generation and uncoment
             if not os.path.isfile("readable/" + codename + ".html"):
                 gen_readable(codename, link)
     
