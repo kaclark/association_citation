@@ -14,8 +14,8 @@ Major Goals: <br>
 [x] Digital Bookshelf <br>
 
 Reading Goals<br>
-[ ] (Truth and Method) record Concept("bildung")
-[ ] (Truth and Method) record Concept("common sense")
+[ ] (Truth and Method) record Concept("bildung")<br>
+[ ] (Truth and Method) record Concept("common sense")<br>
 
 TODO: <br>
 [ ] make book wiki page(concepts, highlights, summary) (Primed)<br>
