@@ -23,7 +23,7 @@ Reading Goals<br>
 TODO: <br>
 [ ] make book wiki page(concepts, highlights, summary) (Primed)<br>
 [ ] make wiki navigation bar(tabs)<br>
-[ ] (Index) Add Bergson's Introduction to Metaphysics<br>
+[x] (Index) Add Bergson's Introduction to Metaphysics<br>
 [x] Generate Bookshelf on Webpage<br>
 [x] Output Notes to webpages<br>
 [x] Output Index to webpage from python<br>
