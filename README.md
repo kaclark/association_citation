@@ -6,6 +6,8 @@ https://kaclark.github.io/association_citation/<br>
 This project is a wiki-library that generates itself from texts and my hihglights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. I will organize my reading and eventually writing via recourse to this project.  
 
 Major Goals: <br>
+[ ] (Stage 3) Concept and Author Wikis for each pdf<br>
+[ ] (Style) Make download, read, and distill for pdf into buttons(down arrow, book, bullet point(Primed)<br> 
 [ ] (Corpus) Output writing with glossory from bound ids<br>
 [ ] Wiki page for each Book/Paper/Author (Primed) <br>
 [ ] Wiki search function<br>
