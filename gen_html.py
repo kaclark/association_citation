@@ -12,29 +12,22 @@ def gen_head(title, wtype="main"):
         <title>{title}</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="include/main.css"/>
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
         </head>
         <body>
         '''
-    elif wtype == "wiki":
+    elif wtype == "wiki" or wtype == "readable":
         return f'''<html><head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>{title}</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../include/main.css"/>
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
         </head>
         <body>
         '''
-
-    elif wtype == "readable":
-        return f'''<html><head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>{title}</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../include/main.css"/>
-        </head>
-        <body>
-        '''
-
 
 def gen_banner():
     return f''' <div class="content">
