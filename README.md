@@ -15,6 +15,7 @@ Major Goals: <br>
 [x] Digital Bookshelf <br>
 
 Reading Goals<br>
+[ ] (Bergson Metaphysics) Move highlights into notes<br>
 [ ] (Truth and Method) record Concept("bildung")<br>
 [ ] (Truth and Method) record Concept("common sense")<br>
 [ ] (Truth and Method) record Author("Oetinger")<br>
