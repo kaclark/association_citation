@@ -3,15 +3,24 @@
 Main Site(Github.io): <br> 
 https://kaclark.github.io/association_citation/<br>
 
-This project is a wiki-library that generates itself from my reading notes. I hope to make texts and my hihglights of texts avaiable in a digital bookshelf
+This project is a wiki-library that generates itself from texts and my hihglights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. 
 
 Major Goals: <br>
 [ ] Wiki page for each Book/Paper/Author (Primed) <br>
+[ ] Wiki search function<br>
+[ ] Display all wiki pages in large table<br>
 [x] In-site reading capacity<br>
 [x] Highlight stream page<br>
 [x] Digital Bookshelf <br>
 
+Reading Goals<br>
+[ ] (Truth and Method) record Concept("bildung")
+[ ] (Truth and Method) record Concept("common sense")
+
 TODO: <br>
+[ ] make book wiki page(concepts, highlights, summary) (Primed)<br>
+[ ] make wiki navigation bar(tabs)<br>
+[ ] Add Bergson's Introduction to Metaphysics<br>
 [x] Generate Bookshelf on Webpage<br>
 [x] Output Notes to webpages<br>
 [x] Output Index to webpage from python<br>
@@ -19,5 +28,4 @@ TODO: <br>
 [x] (Data Structure) Basic datastructure testing(Bergson, Intution)<br>
 [x] (Data Structure) Wiki concept class<br>
 [x] python pdf parsing and display from url <br>
-[x] Add snippets from Parisi's Abstract Sex as a demo template <br>
 [x] (@index.html) Move Style into a .css file <br> 
