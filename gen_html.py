@@ -99,7 +99,10 @@ def gen_wiki_page(codename):
             for line in [l.split("\n")[0] for l in note_in.readlines()]:
                 pg_num = line.split(",")[-1]
                 quote = "".join(line.split(",")[:-1])
-                wiki += gen_p(quote + " (pg " + pg_num + ")")
+                if "??" in pg_num:
+                    wiki += gen_p(quote)
+                else:
+                    wiki += gen_p(quote + " (pg " + pg_num + ")")
     except FileNotFoundError:
         with open("include/notes/" + codename + ".note", "w") as note_out:
             note_out.write("")
