@@ -114,6 +114,7 @@ def gen_wiki_page(codename):
 
 
 def gen_book_table():
+    #creates the html for the main body of the index and all supporting pages that link from there
     table = f'<div class="content" id="content">'
     #for each book, add gen p with a href
     table_content = {"paper": [], "dissertation":[], "book": []}
@@ -150,4 +151,9 @@ def gen_index():
     with open("index.html", "w") as index_out:
         index_out.write(index)
 
-gen_index()
+def refresh():
+    gen_index()
+
+
+#========RUNS=========#
+refresh()
