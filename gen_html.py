@@ -98,7 +98,7 @@ def gen_wiki_page(codename):
         with open("include/notes/" + codename + ".note", "r") as note_in:
             for line in [l.split("\n")[0] for l in note_in.readlines()]:
                 pg_num = line.split(",")[-1]
-                quote = "".join(line.split(",")[:-1])
+                quote = ",".join(line.split(",")[:-1])
                 if "??" in pg_num:
                     wiki += gen_p(quote)
                 else:
