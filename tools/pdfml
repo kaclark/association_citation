@@ -61,7 +61,7 @@ def gen_readable(pageout, source):
     if "www" in source:
         pdf_from_url_to_html(filtered_pageout, source)
     else:
-        local_pdf = subprocess.run(["sh", "-c", "pdftohtml -s " + source, filtered_pageout + ".html"])
+        local_pdf = subprocess.run(["sh", "-c", "pdftohtml " + source, filtered_pageout + ".html"])
 
 def exhaustion(null):
     print("unhandled error: invoke pdfml again\npdfml -h for usage info")
