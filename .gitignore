@@ -18,4 +18,5 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
 **.sample
+textflow/src/token.api
 #amplify-do-not-edit-end
