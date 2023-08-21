@@ -1,7 +1,7 @@
 import { TodoistApi } from '@doist/todoist-api-typescript'
 import * as fs from 'fs';
-const token = fs.readFileSync('/token.api', 'utf-8');
-
+const rawToken = fs.readFileSync('token.api', 'utf-8');
+const token = rawToken.trim()
 const api = new TodoistApi(token)
 
 api.getTasks()
