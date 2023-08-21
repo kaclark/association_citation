@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "aws-amplify": "^5.3.8"
+    "aws-amplify": "^5.3.8",
+    "tsc": "^2.0.4"
   },
   "devDependencies": {
     "@types/node": "^20.5.1",
