@@ -9,6 +9,8 @@ Major Goals: <br>
 [ ] (Code Base) Refactor in Typescript and React<br>
 [ ] (Code Base) Work on Storage Integration: <br>
 => https://docs.amplify.aws/lib/storage/getting-started/q/platform/js/#manual-setup-import-storage-bucket <br>
+[ ] (Code Base) Pull comments from todoist to build pages: <br>
+=> https://developer.todoist.com/rest/v2/?javascript#get-all-comments <br>
 [x] (Code Base) Integrate todoist into typescript react framework<br>
 [x] (Code Base) init Typescript and React Framework<br>
 [x] (Code Base) Configure terminal and pixel 6 for npm dev<br>
