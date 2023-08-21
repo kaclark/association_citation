@@ -7,6 +7,8 @@ This project is a wiki-library that generates itself from texts and my hihglight
 
 Major Goals: <br>
 [ ] (Code Base) Refactor in Typescript and React<br>
+[x] (Code Base) init Typescript and React Framework<br>
+[x] (Code Base) Configure terminal and pixel 6 for npm dev<br>
 [ ] (Stage 3) Concept and Author Wikis for each pdf<br>
 [ ] (Narrativity) log and display reading notes<br>
 [ ] (Style) Make download, read, and distill for pdf into buttons(down arrow, book, bullet point(Primed)<br> 
