@@ -13,7 +13,6 @@ def gen_head(title, wtype="main"):
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="include/main.css"/>
         <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
         </head>
         <body>
         '''
