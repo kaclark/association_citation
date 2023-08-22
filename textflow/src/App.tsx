@@ -1,6 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import token from "./token.json";
+import { TodoistApi } from '@doist/todoist-api-typescript'
+
+const api = new TodoistApi(token.token)
+api.getTasks()
+    .then((tasks) => console.log(tasks))
+    .catch((error) => console.log(error))
 
 function App() {
   return (

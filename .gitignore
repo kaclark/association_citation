@@ -18,6 +18,6 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
 **.sample
-textflow/token.api
+textflow/src/token.json
 nlp_testing.py
 #amplify-do-not-edit-end
