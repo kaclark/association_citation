@@ -5,13 +5,20 @@ import token from "./token.json";
 import { TodoistApi } from '@doist/todoist-api-typescript'
 
 function parse_todo(comments) {
-	comments.forEach(x => { console.log(x.content) })
+	let comm_arr:string[] = new Array(comments.length);
+	comments.forEach(x => { comm_arr.push(x.content); });
+	return comm_arr;
 }
 
-const api = new TodoistApi(token.token)
-api.getComments({ taskId: "7139027260"})
-    .then((comments) => parse_todo(comments))
-    .catch((error) => console.log(error))
+function get_comments(){
+    const api = new TodoistApi(token.token)
+    let comment_set = api.getComments({ taskId: "7139027260"})
+	    .then((comments) => parse_todo(comments))
+	    .catch((error) => console.log(error))
+    console.log(comment_set)
+}
+
+get_comments()
 
 function App() {
   return (
@@ -19,7 +26,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+	Coming Soon!
         </p>
         <a
           className="App-link"
