@@ -4,9 +4,13 @@ import './App.css';
 import token from "./token.json";
 import { TodoistApi } from '@doist/todoist-api-typescript'
 
+function parse_todo(comments) {
+	comments.forEach(x => { console.log(x.content) })
+}
+
 const api = new TodoistApi(token.token)
-api.getTasks()
-    .then((tasks) => console.log(tasks))
+api.getComments({ taskId: "7139027260"})
+    .then((comments) => parse_todo(comments))
     .catch((error) => console.log(error))
 
 function App() {
