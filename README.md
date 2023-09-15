@@ -6,8 +6,9 @@ https://kaclark.github.io/association_citation/<br>
 This project is a wiki-library that generates itself from texts and my hihglights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. I will organize my reading and eventually writing via recourse to this project.  
 
 Major Goals: <br>
-[ ] (Code Base) Refactor base site in Typescript and React<br>
-[ ] (Code Base) Work on Storage Integration: <br>
+[ ]REST API integration; pull from todoist, post somewhere else?<br>
+[Frozen][ ] (Code Base) Refactor base site in Typescript and React<br>
+[Frozen][ ] (Code Base) Work on Storage Integration: <br>
 => https://docs.amplify.aws/lib/storage/getting-started/q/platform/js/#manual-setup-import-storage-bucket <br>
 [ ] (Code Base) Pull comments once; refresh page <br>
 [x] (Code Base) Pull comments from todoist to build pages: <br>
