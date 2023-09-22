@@ -19,5 +19,6 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 textflow/src/token.json
+token.json
 nlp_testing.py
 #amplify-do-not-edit-end
