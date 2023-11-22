@@ -6,16 +6,9 @@ https://kaclark.github.io/association_citation/<br>
 This project is a wiki-library that generates itself from texts and my hihglights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. I will organize my reading and eventually writing via recourse to this project.  
 
 Major Goals: <br>
-[ ]REST API integration; pull from todoist, post somewhere else?<br>
-[Frozen][ ] (Code Base) Refactor base site in Typescript and React<br>
-[Frozen][ ] (Code Base) Work on Storage Integration: <br>
-=> https://docs.amplify.aws/lib/storage/getting-started/q/platform/js/#manual-setup-import-storage-bucket <br>
-[ ] (Code Base) Pull comments once; refresh page <br>
+[ ] Generate pages for textshelf entries <br>
 [x] (Code Base) Pull comments from todoist to build pages: <br>
 => https://developer.todoist.com/rest/v2/?javascript#get-all-comments <br>
-[x] (Code Base) Integrate todoist into typescript react framework<br>
-[x] (Code Base) init Typescript and React Framework<br>
-[x] (Code Base) Configure terminal and pixel 6 for npm dev<br>
 [ ] (Stage 3) Concept and Author Wikis for each pdf<br>
 [ ] (Narrativity) log and display reading notes<br>
 [ ] (Style) Make download, read, and distill for pdf into buttons(down arrow, book, bullet point(Primed)<br> 
