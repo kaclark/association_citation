@@ -5,7 +5,7 @@ from todoist_api_python.api import TodoistAPI
 from todoist_api_python.models import Attachment, Comment, Task
 
 ##########################
-#helper functions
+#Helper Functions
 ##########################
 
 def strip_underscores(string):
@@ -25,8 +25,15 @@ def task_content_from_task_id(t_id):
     except Exception as error:
         print(error)
 
+def description_from_task_id(t_id):
+    try:
+        task = api.get_task(task_id=t_id)
+        return task.description
+    except Exception as error:
+        print(error)
+
 ##########################
-#html generation
+#Html Generation
 ##########################
 
 def gen_head(title):
@@ -37,12 +44,13 @@ def gen_head(title):
     <link rel="stylesheet" type="text/css" href="../include/main.css"/>
     </head>'''
 
-def gen_header(title):
+def gen_header(title, ref_info):
     mtitle = strip_underscores(title)
     return f'''
     <body>
     <div class="content">
         <h1>{mtitle}</h1>
+        <p>{ref_info}</p>
     </div>
     <div class="content" id="content">
     '''
@@ -74,6 +82,7 @@ with open("api.token", "r") as key_in:
 #Extract Data from todoist
 ##########################
 x_title = task_content_from_task_id(task_id)
+ref_info = description_from_task_id(task_id)
 x_comments = comments_from_task_id(task_id)
 
 ##########################
@@ -81,15 +90,10 @@ x_comments = comments_from_task_id(task_id)
 ##########################
 html_payload = ""
 html_payload += gen_head(x_title)
-html_payload += gen_header(x_title)
+html_payload += gen_header(x_title, ref_info)
 for x_comment in x_comments:
     html_payload += gen_p(x_comment)
 html_payload += gen_tail()
-
-##########################
-#TESTING
-##########################
-print(html_payload)
 
 with open("livescans/" + x_title + ".html", "w") as html_out:
     html_out.write(html_payload)
