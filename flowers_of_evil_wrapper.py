@@ -133,6 +133,7 @@ poem_metadata = [('', (0,0)), #1-indexing to match book
          ('',(0,0)),
          ('',(0,0)),
 ]
+'''
 metadata = random.choice(poem_metadata)
 if metadata == ('',(0,0)):
     print("Continue Filling in Table of Contents")
@@ -140,4 +141,13 @@ else:
     poem_title, poem_lookup = metadata
     en_page, fr_page = poem_lookup
     print(poem_title, "see pg." ,en_page)
-
+'''
+with open("flowers_of_evil.csv", "r") as flowers_in:
+    #flowers = {ll.split(',')[0], ll.split(',')[1].replace("*",",") for ll in [l.split('\n')[0] for l in flowers_in.readlines()]}
+    lines = [l.split('\n')[0] for l in flowers_in.readlines()]
+    for line in lines:
+        title, content = line.split(",")
+        print(title.upper(), "\n")
+        comma_conv = content.replace("*",",")
+        newlines = comma_conv.replace("\\n", "\n")
+        print(newlines)
