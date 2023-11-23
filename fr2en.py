@@ -1,4 +1,4 @@
-#usage: python fr2en.py "mot1,mot2,..."
+#usage: python fr2en.py mot1 mot2 mot3 ...
 from PyMultiDictionary import MultiDictionary
 import sys
 

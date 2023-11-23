@@ -3,9 +3,12 @@
 Main Site(Github.io): <br> 
 https://kaclark.github.io/association_citation/<br>
 
-This project is a wiki-library that generates itself from texts and my hihglights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. I will organize my reading and eventually writing via recourse to this project.  
+This project is a wiki-library that generates itself from texts and my hihglights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. I will organize my reading and eventually writing via recourse to this project.<br> 
+
+Poetry Memorization and French Translation with history will be rooted in Baudelaire<br>
 
 Major Goals: <br>
+[ ] Finish Flowers of Evil metadata <br>
 [ ] Generate pages for textshelf entries <br>
 [x] (Code Base) Pull comments from todoist to build pages: <br>
 => https://developer.todoist.com/rest/v2/?javascript#get-all-comments <br>
