@@ -133,6 +133,22 @@ poem_metadata = [('', (0,0)), #1-indexing to match book
          ('',(0,0)),
          ('',(0,0)),
 ]
+
+def print_poem(title, content):
+    print(title.upper(), "\n")
+    comma_conv = content.replace("*",",")
+    newlines = comma_conv.replace("\\n", "\n")
+    print(newlines)
+
+def load_poem_csv():
+    with open("flowers_of_evil.csv", "r") as flowers_in:
+        lines = [l.split('\n')[0] for l in flowers_in.readlines()]
+        poems = {}
+        for line in lines:
+            title, content = line.split(",")
+            poems[title] = content
+    return poems
+
 '''
 metadata = random.choice(poem_metadata)
 if metadata == ('',(0,0)):
@@ -142,12 +158,6 @@ else:
     en_page, fr_page = poem_lookup
     print(poem_title, "see pg." ,en_page)
 '''
-with open("flowers_of_evil.csv", "r") as flowers_in:
-    #flowers = {ll.split(',')[0], ll.split(',')[1].replace("*",",") for ll in [l.split('\n')[0] for l in flowers_in.readlines()]}
-    lines = [l.split('\n')[0] for l in flowers_in.readlines()]
-    for line in lines:
-        title, content = line.split(",")
-        print(title.upper(), "\n")
-        comma_conv = content.replace("*",",")
-        newlines = comma_conv.replace("\\n", "\n")
-        print(newlines)
+
+print(print_poem("Man and the Sea", load_poem_csv()["Man and the Sea"]))
+
