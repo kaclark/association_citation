@@ -97,41 +97,40 @@ poem_metadata = [('', (0,0)), #1-indexing to match book
          ('To a Passer-by',(118,337)),
          ('Skeletons Digging',(118,338)),
          ('Comes the Charming Evening',(120,339)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
-         ('',(0,0)),
+         ('The Gaming Table',(121,340)),
+         ('The Dance of Death',(123,341)),
+         ('The Love of Lies',(125,344)),
+         ('I have not forgotten',(126,345)),
+         ('The Servant',(127,345)),
+         ('Mists and Rains',(128,346)),
+         ('Parisian Dream',(129,347)),
+         ('Morning Twilight',(131,349)),
+         ('The Soul of Wine',(135,353)),
+         ('The Ragpickers Wine',(136,354)),
+         ('The Murderers Wine',(137,355)),
+         ('The Solitarys Wine',(140,357)),
+         ('Lovers Wine',(140,358)),
+         ('Destruction',(145,361)),
+         ('The Martyr',(146,361)),
+         ('Lesbos',(148,364)),
+         ('Lesbians:Delphine and Hippolyta',(151,366)),
+         ('Lesbians (like pensive cattle...)',(155,370)),
+         ('The Two Good Sisters',(157,371)),
+         ('The Fountain of Blood',(157,372)),
+         ('An Allegory',(158,373)),
+         ('My Beatrice',(159,373)),
+         ('The Metamorphoses of a Vampire',(160,375)),
+         ('Voyage to Cythera',(161,376)),
+         ('Love and  the Skull',(164,378)),
+         ('The Denial of Saint Peter',(167,383)),
+         ('Abel and Cain',(168,384)),
+         ('Litany to Satan',(170,386)),
+         ('The Death of Lovers',(175,391)),
+         ('The Death of the Poor',(175,391)),
+         ('The Death of Artists',(176,392)),
+         ('The End of the Day',(177,393)),
+         ('Dream of a Curious Person',(178,393)),
+         ('The Voyage',(179,394))
 ]
 
 def print_poem(title, content):
@@ -139,9 +138,10 @@ def print_poem(title, content):
     comma_conv = content.replace("*",",")
     newlines = comma_conv.replace("\\n", "\n")
     print(newlines)
+    print("\n")
 
 def load_poem_csv():
-    with open("flowers_of_evil.csv", "r") as flowers_in:
+    with open("english_flowers_of_evil.csv", "r") as flowers_in:
         lines = [l.split('\n')[0] for l in flowers_in.readlines()]
         poems = {}
         for line in lines:
@@ -149,15 +149,15 @@ def load_poem_csv():
             poems[title] = content
     return poems
 
-'''
 metadata = random.choice(poem_metadata)
-if metadata == ('',(0,0)):
-    print("Continue Filling in Table of Contents")
+poem_title, poem_lookup = metadata
+recorded_poems = load_poem_csv()
+if poem_title in recorded_poems:
+    print_poem(poem_title, recorded_poems[poem_title])
 else:
     poem_title, poem_lookup = metadata
     en_page, fr_page = poem_lookup
     print(poem_title, "see pg." ,en_page)
-'''
 
-print(print_poem("Man and the Sea", load_poem_csv()["Man and the Sea"]))
+#print(print_poem("Man and the Sea", load_poem_csv()["Man and the Sea"]))
 
