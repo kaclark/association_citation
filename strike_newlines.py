@@ -1,10 +1,10 @@
-import curses
-from curses import wrapper
-from curses.textpad import Textbox, rectangle
+#import curses
+#from curses import wrapper
+#from curses.textpad import Textbox, rectangle
 import pyperclip
 
-stdscr = curses.initscr()
-curses.start_color()
+#stdscr = curses.initscr()
+#curses.start_color()
 
 def text_box(stdscr):
     stdscr.addstr(0, 0, "ctrl+G to strip out newlines")
@@ -34,5 +34,8 @@ def text_box(stdscr):
     #wait
     curses.napms(2000)
 
-wrapper(text_box)
+#wrapper(text_box)
+message = pyperclip.paste()
+mod_message = message.replace("\n", "")
+pyperclip.copy(message.replace("\n", ""))
 
