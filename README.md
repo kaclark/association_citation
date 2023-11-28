@@ -7,8 +7,11 @@ This project is a wiki-library that generates itself from texts and my hihglight
 
 Poetry Memorization and French Translation with history will be rooted in Baudelaire<br>
 
+Notes on Scripts and Tools<br>
+Autocomment does not work on pixel; works on fedora linux<br>
+
 Major Goals: <br>
-[ ] Finish Flowers of Evil metadata <br>
+[x] Finish Flowers of Evil metadata <br>
 [ ] Generate pages for textshelf entries <br>
 [x] (Code Base) Pull comments from todoist to build pages: <br>
 => https://developer.todoist.com/rest/v2/?javascript#get-all-comments <br>

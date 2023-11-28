@@ -1,3 +1,4 @@
+#DOES NOT WORK ON PIXEL
 import sys
 from todoist_api_python.api import TodoistAPI
 from todoist_api_python.models import Attachment, Comment, Task
