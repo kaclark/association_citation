@@ -6,7 +6,7 @@ credentials_path = {
     "api_token": "tw_api.token",  
     "bearer_token": "tw_bearer.token",  
     "key_secret": "tw_key.secret",  
-    "ouath_client_id":"tw_ouath_client.id",
+    "oauth_client_id":"tw_oauth_client.id",
     "oauth_client_secret":"tw_oauth_client.secret",  
 }
 
@@ -14,12 +14,12 @@ credentials = {
     "api_token": "",  
     "bearer_token": "",  
     "key_secret": "",  
-    "ouath_client_id":"",
+    "oauth_client_id":"",
     "oauth_client_secret":"",  
 }
 
 for cred_name, cred_path in credentials_path.items():
-    with open(cred_path, "r") as cred_in:
+    with open("../tw_tokens/" + cred_path, "r") as cred_in:
         credentials[cred_name] = cred_in.readlines()[0].split('\n')[0]
 
 consumer_key = credentials["api_token"]
