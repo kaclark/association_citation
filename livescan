@@ -1,4 +1,5 @@
-#usage: python gen_highlight_page.py #task_id
+#!/usr/bin/python3
+#usage: ./livescan #task_id
 
 import sys
 from todoist_api_python.api import TodoistAPI
