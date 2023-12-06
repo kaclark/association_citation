@@ -1,0 +1,101 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>[Chabert]A_History_of_Algorithms</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../include/main.css"/>
+    </head>
+    <body>
+    <div class="content">
+        <h1>[chabert]a History Of Algorithms</h1>
+        <p>The text here is the result of an a human operated form of the virtual python code Book.Index[Euler].get_pages()</p>
+    </div>
+    <div class="content" id="content">
+    
+    <p>Occupying a position that lies between complete irrationality and the most ir- refutable rationality, between the real and the imaginary, and between numerology  and mathematics, these 'square arrays' also provide a fascination as part of the magic of arithmetic. For this reason they have attracted generations of amateurs of recreational mathematics. Although it is easy to construct these figures, and those  who enjoy doing so will find myriads of special cases for each one, those who spe- cialise in listing all possibilities quickly reach a point where they are unable to make  further progress. In fact, while there only exist 8 magic squares of order 3, which can all be deduced from each other by means of symmetries and rotation, and although Arnauld, from 1667 onwards, managed to explicitly determine the 16 magic squares of order 4 which, by means of symmetries and rotations, generate all 880 magic squares of order 4, little progress has been made in the subject since then. Martin Gardner [7], the well known American writer on recreational mathematics, wrote in 1961 that the number of magic squares of order 5 is not yet known and must be in the region of 13 million. Some amateurs of recreational mathematics have attempted to restrict the total number of possibilities by insisting on additional properties. This has generated a new procession of such squares, each more 'magic' than the others: cabalistic, panmagical, hypermagical, diabolical, satanic, and so on. We shall not stray into the area of the definitions of these different types here: the reader who wishes to know more may consult [l] , [4], [5], [8] , [9] and [12]. Although often rejected as worthy of serious consideration, magic squares have nonetheless occasionally attracted the interest of first rate mathematicians, among whom are Ibn al-Haytham, known in Europe as Alhazen (d. 1041), Pierre de Fermat in the 17th century, Leonhard Euler in the 18th century and Arthur Cayley in the 19th century. Until quite recently the main questions about magic squares related to  their construction, proofs of existence and enumeration of sets of squares possess- ing some or other particular property. In more recent times, mathematicians have  been obliged to examine these strange squares in the context of classical structural algebra, thinking of them in terms of vector spaces or modules and defining their tensor products, the cells of the squares being no longer filled just with consecutive  integers, but with any positive or negative numbers. Other investigations have con- sidered the implications of restricting the types of numbers to be used to, say, prime  numbers, square numbers, fractions, rational numbers, complex numbers, or num- ber written other than in base ten. pg 52</p>
+    
+    <p>As an annexe to his Nouveaux elements de geometrie [2], Arnauld added a section called "The solution to one of the most famous and most difficult problems of  arithmetic commonly called magic squares". This provides evidence for the infatua- tion of 17th century geometers with magic squares. It is known that in 1654 Pascal  submitted to the Paris Academy a Treatise on magically magic numbers, a treatise which has not come down to us but one which was praised by Fermat, that great amateur of numbers.  Just like the magic squares composed by az-Zinjiini", the magic squares that Ar- nauld produced were those with borders: a magic square with borders remains a  magic square when one or more of its borders are removed. This particular type of magic square was studied in the 16th century by Stifel in his Arithmetica integra of 1554, and then in the 17th century by Frenicle de Bessy, Fermat, Arnauld, Prestet and Ozanam. In the following century Euler considered their construction in his De quadratis magicis (1776) [ 12). At first it might seem inappropriate for a treatise on magic squares to appear in a work of geometry, but the approach to the solution of the problem of the magic square presented by Arnauld is certainly in the spirit of the book. This is to present an ordered, clear and natural method for solving the problem that also shows us why  it provides a solution. Arnauld therefore provides us with a methodical way for con- structing the solution, and it is a way that also leads to a proof of its legitimacy. For  the reader should not be satisfied merely with a description of the process. The method of borders that Arnauld uses is also indicative of the mathematics  practice of the time, since he introduces algebraic symbols which indicate the gener- ality of the algorithm. In fact, the method applies to all magic squares, both even or  odd, with only small variations needed to take account of the parity of the order. We shall present the method for even squares. The method also has the advantage of  producing, for any given order, several different magic squares which cannot be de- duced from each other by rotations or symmetries. pg 70</p>
+    
+    <p>By 1 950, the word algorithm was most frequently associated with 'Euclid's algorithm'.  Donald Knuth The Art of Computer Programming, (v. I, p. 2) pg 113</p>
+    
+    <p>We have already remarked in the introduction to this book, that Euclid's algorithm often represents for the mathematician the prototype of algorithmic procedure, and that it has relevance right up to today. It can be of use, not only in the search for the greatest common divisor, as described by Euclid himself (Section 4.1), but also, by adapting the procedure, in the solution of indeterminate equations, leading to Bezout's identity (Section 4.3). It allowed al-Khayyam to compare two ratios, or to show that they were equal (Section 4.2); this appears even more clearly in the writing  of continued fractions which were systematically studied by Euler (Section 4.4). Fi- nally, what may appear surprising, the algorithm can be used in Sturm's method for  determining the number of real roots of an algebraic equation (Section 4.5). pg 113</p>
+    
+    <p>We may note, in passing, that Leibniz showed an interest in the idea. Also Huy- gens was led to use continued fractions in his calculations for the construction of a  planetarium (1682). He had to find the number of teeth for intermeshing cogs, and the ratio of these had to be an approximation for the ratios of much larger numbers  obtained from astronomical observations. He set out a first approach to the conver- gence of continued fractions in De automata planetario (20].  The theory of continued fractions, as it is known today, was properly established  in the 18th century. It was laid down by Euler and pretty well completed by La- grange. The passages given here are from Euler's first text on the subject, his De  Fractionibus continu is Dissertatio written in 1737 [ 15]. Euler returned to the subject in his Introductio in analysin infinitorum [ 16]. The continued fraction expansion of a real number x, is obtained in the following way (we take x to be positive for simplicity). Using [x] for the integer part of x, that is the unique integer a such that a� x < a + 1, the sequences of numbers Zn and an are defined by the recurrence relations:  Zo = x, an = [zn l and Zn + I = 1/(Zn - an) provided Zn "# an .  If one of the Zn is an integer, the process ends and this happens if, and only if, x is  rational. Hence the number e must be irrational since its continued fraction expan- sion is infinite (see paragraph 21 in the text by Euler that follows). pg 127</p>
+    
+    <p>[Yet to be scanned for] pg 128</p>
+    
+    <p>[Yet to be scanned for] pg 129</p>
+    
+    <p>[Yet to be scanned for] pg 130</p>
+    
+    <p>[Yet to be scanned for] pg 131</p>
+    
+    <p>[Yet to be scanned for] pg 136</p>
+    
+    <p>[Yet to be scanned for] pg 137</p>
+    
+    <p>[Yet to be scanned for] pg 140</p>
+    
+    <p>[Yet to be scanned for] pg 161-166</p>
+    
+    <p>[Yet to be scanned for] pg 224-227</p>
+    
+    <p>[Yet to be scanned for] pg 236</p>
+    
+    <p>[Yet to be scanned for] pg 241</p>
+    
+    <p>[Yet to be scanned for] pg 247-248</p>
+    
+    <p>[Yet to be scanned for] pg 250</p>
+    
+    <p>[Yet to be scanned for] pg 252-253</p>
+    
+    <p>[Yet to be scanned for] pg 260-263</p>
+    
+    <p>[Yet to be scanned for] pg 276</p>
+    
+    <p>[Yet to be scanned for] pg 287</p>
+    
+    <p>[Yet to be scanned for] pg 315</p>
+    
+    <p>[Yet to be scanned for] pg 351</p>
+    
+    <p>[Yet to be scanned for] pg 354</p>
+    
+    <p>[Yet to be scanned for] pg 356</p>
+    
+    <p>[Yet to be scanned for] pg 374-378</p>
+    
+    <p>[Yet to be scanned for] pg 381-384</p>
+    
+    <p>[Yet to be scanned for] pg 387</p>
+    
+    <p>[Yet to be scanned for] pg 395-396</p>
+    
+    <p>[Yet to be scanned for] pg 401-402</p>
+    
+    <p>[Yet to be scanned for] pg 407</p>
+    
+    <p>[Yet to be scanned for] pg 419</p>
+    
+    <p>[Yet to be scanned for] pg 422</p>
+    
+    <p>[Yet to be scanned for] pg 429</p>
+    
+    <p>[Yet to be scanned for] pg 434-442</p>
+    
+    <p>[Yet to be scanned for] pg 451</p>
+    
+    <p>[Yet to be scanned for] pg 453</p>
+    
+    <p>[Yet to be scanned for] pg 481</p>
+    
+    <p>[Yet to be scanned for] pg 493</p>
+    
+    <p>[Yet to be scanned for] pg 499</p>
+    
+    <p>[Yet to be scanned for] pg 505</p>
+    
+    </div>
+    </body>
+    </html>
+    
