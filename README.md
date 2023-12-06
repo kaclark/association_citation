@@ -3,7 +3,7 @@
 Main Site(Github.io): <br> 
 https://kaclark.github.io/association_citation/<br>
 
-This project is a wiki-library that generates itself from texts and my hihglights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. I will organize my reading and eventually writing via recourse to this project.<br> 
+This project is a wiki-library that generates itself from texts and my highlights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. I will organize my reading and eventually writing via recourse to this project.<br> 
 
 Poetry Memorization and French Translation with history will be rooted in Baudelaire<br>
 
