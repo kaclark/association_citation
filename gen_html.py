@@ -194,6 +194,8 @@ def create_link_table(titles):
     table_html = "<div class='content' id='content'>"
     table_html += "<h1>Livescans</h1>"
     table_html += "<table class='livescans'>"
+    #todo: sort by latest comment and supply that date
+    title.reverse()
     for title in titles:
         table_html += get_table_row(title)
     table_html += "</table></div>"
