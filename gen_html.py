@@ -5,6 +5,10 @@ import PyPDF2
 import io
 import os
 
+import sys
+from todoist_api_python.api import TodoistAPI
+from todoist_api_python.models import Attachment, Comment, Task
+
 def gen_head(title, wtype="main"): 
     if wtype == "main":
         return f'''<html><head>
@@ -145,6 +149,7 @@ def gen_index():
     index += gen_head("Association Citation", wtype="main")
     index += gen_banner()
     index += gen_book_table()
+    index += create_link_table(get_section(140213544, load_todoist()))
     index += gen_tail()
 
     with open("index.html", "w") as index_out:
@@ -153,6 +158,35 @@ def gen_index():
 def refresh():
     gen_index()
 
+def load_todoist():
+    #access api token
+    with open("api.token", "r") as key_in:
+        api = TodoistAPI(str(key_in.readlines()[0].split("\n")[0]))
+    return api
 
+def get_section(s_id, api):
+    try:
+        titles = api.get_tasks(section_id=s_id)
+        return titles
+        #title = api.get_task(task_id=7480248679)
+        #return title 
+    except Exception as error:
+        print(error)
+
+def get_table_row(content):
+    clink = "livescans/" + content + ".html"
+    return f'''<tr><td>
+    <tr><td><a href={clink}>{content}</a> 
+    </td></tr>
+    '''
+def create_link_table(titles):
+    #titles should be full task objects
+    table_html = "<h1>Livescans</h1>"
+    table_html += "<table>"
+    for title in titles:
+        table_html += get_table_row(title.content)
+    table_html += "</table>"
+    return table_html
+    
 #========RUNS=========#
 refresh()
