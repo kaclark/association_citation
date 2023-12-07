@@ -35,7 +35,6 @@ for k,v in word_info[0].items():
                     print(ky + "\n")
                     for vw in vy:
                         print("\t" + vw)
-                    print("\n")
     elif k == "etymology":
         v2 = v.replace(";", "\n\n")
         v3 = v2.replace(".", "\n\n")
