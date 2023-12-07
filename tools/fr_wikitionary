@@ -18,7 +18,6 @@ parser.include_relation("coordinate terms")
 
 s_word = sys.argv[1]
 word_info = parser.fetch(s_word, 'french')
-print(s_word, "\n")
 #The word info is given as a map
 for k,v in word_info[0].items():
     #definitions is the only data structure returned
@@ -42,7 +41,7 @@ for k,v in word_info[0].items():
         v3 = v2.replace(".", "\n\n")
         v4 = v3.replace(":", "\n\n")
         v5 = v4.replace("),", "),\n\n")
-        print(k.upper(), "\n\n", v5)
+        print(s_word, k.upper(), "\n\n", v5)
     elif k == "pronunciations":
         print(k.upper(), "\n")
         for kq,vq in v.items():
