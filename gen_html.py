@@ -188,7 +188,7 @@ def get_table_row(content):
     '''
 def create_link_table(titles):
     #titles should be full task objects
-    table_html = "<div class="content" id="content">"
+    table_html = "<div class='content' id='content'>"
     table_html += "<h1>Livescans</h1>"
     table_html += "<table>"
     for title in titles:
