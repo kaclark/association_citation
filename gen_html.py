@@ -36,7 +36,7 @@ def gen_banner():
 	<div class='teaser-box'>
 	<img class='teaser-img' src='include/img/pixel_book.jpg'></img>
 	</div>
-	<h2>Stage 2: Digital Library<h2>
+	<h2>Stage 3: Dynamic ScanHub<h2>
     </div>
     '''
 
@@ -128,7 +128,7 @@ def gen_book_table():
             gen_wiki_page(codename)
             if not os.path.isfile("readable/" + codename + ".html"):
                 gen_readable(codename, link)
-    
+    table += "<h1>Phase 2: Digital Library</h1>" 
     table += "<h1>Papers</h1>"
     for paper_data in table_content["paper"]:
         table += gen_download_p(paper_data[0], paper_data[1], paper_data[2])
@@ -148,8 +148,8 @@ def gen_index():
     index = ""
     index += gen_head("Association Citation", wtype="main")
     index += gen_banner()
-    index += gen_book_table()
     index += create_link_table(get_section(140213544, load_todoist()))
+    index += gen_book_table()
     index += gen_tail()
 
     with open("index.html", "w") as index_out:
@@ -173,19 +173,27 @@ def get_section(s_id, api):
     except Exception as error:
         print(error)
 
+def format_title(title):
+    title1 = title.replace("[", "")
+    title2 = title1.replace("]", ":")
+    title = title2.replace("_", " ")
+    return title
+
 def get_table_row(content):
     clink = "livescans/" + content + ".html"
+    p_content = format_title(content)
     return f'''<tr><td>
-    <tr><td><a href={clink}>{content}</a> 
+    <tr><td><a href={clink}>{p_content}</a> 
     </td></tr>
     '''
 def create_link_table(titles):
     #titles should be full task objects
-    table_html = "<h1>Livescans</h1>"
+    table_html = "<div class="content" id="content">"
+    table_html += "<h1>Livescans</h1>"
     table_html += "<table>"
     for title in titles:
         table_html += get_table_row(title.content)
-    table_html += "</table>"
+    table_html += "</table></div>"
     return table_html
     
 #========RUNS=========#
