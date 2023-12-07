@@ -175,7 +175,7 @@ def get_section(s_id, api):
 
 def format_title(title):
     title1 = title.replace("[", "")
-    title2 = title1.replace("]", ":")
+    title2 = title1.replace("]", ": ")
     title = title2.replace("_", " ")
     return title
 

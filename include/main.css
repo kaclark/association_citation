@@ -108,18 +108,8 @@ p code {
 	font-size: 14px;
 }
 
-#teasers {
-    margin: 0 auto;
-}
-
-#teasers td {
-    margin: 0 auto;
-    text-align: center;
-    padding: 5px;
-}
-
-#teasers img {
-    width: 50px;
+.livescans {
+	font-size: 16px;
 }
 
 #results img {
