@@ -179,12 +179,15 @@ def format_title(title):
     title = title2.replace("_", " ")
     return title
 
-def get_table_row(content):
+def get_table_row(title_task):
+    content = title_task.content
+    c_date = title_task.created_at.split("T")[0]
     clink = "livescans/" + content + ".html"
     p_content = format_title(content)
     return f'''<tr><td>
-    <tr><td><a href={clink}>{p_content}</a> 
-    </td></tr>
+    <tr><td><a href={clink}>{p_content}</a></td>
+    <td>{c_date}</td>
+    </tr>
     '''
 def create_link_table(titles):
     #titles should be full task objects
@@ -192,7 +195,7 @@ def create_link_table(titles):
     table_html += "<h1>Livescans</h1>"
     table_html += "<table class='livescans'>"
     for title in titles:
-        table_html += get_table_row(title.content)
+        table_html += get_table_row(title)
     table_html += "</table></div>"
     return table_html
     
