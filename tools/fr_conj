@@ -1,0 +1,77 @@
+#!/usr/bin/python3
+
+import sys
+import requests
+
+from bs4 import BeautifulSoup
+from pprint import pprint
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+
+from prettytable import PrettyTable
+
+url_base = "https://www.lawlessfrench.com/verb-conjugations/"
+
+verb = sys.argv[1]
+
+def soup_scrape():
+    headers = {
+        'accept-language': 'en-US,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,ar;q=0.6',
+        'user-agent': 'Firefox'
+    }
+    page = requests.get(url_base + verb, headers=headers)
+    soup = BeautifulSoup(page.content, "html.parser")
+    print(soup)
+
+
+def selenium_scrape():
+    #won't work on pixel6(without headless?)
+    wellform_table_signs = [
+        "Present Imperfect Future Conditional Subjunctive Imperfect subj.",
+    ] 
+    
+    #scraping should access the table data directly such that spacing errors are not run into here
+    #TODO: Scrape from Table Element instead of div
+    #"Passé composé Past perfect Future perfect Past conditional Past subjunctive Pluperfect subj.",
+
+    options = webdriver.ChromeOptions()
+    #options.add_argument("--headless=new")
+    options.add_experimental_option("detach", True)
+    driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
+    #driver = webdriver.Chrome(options=options)
+    driver.get(url_base + verb)
+    #print(driver.find_element(By.TAG_NAME, "body").text)
+    table_info = driver.find_element(By.CLASS_NAME, "entry-content").text
+    table_lines = table_info.split("\n")
+    for l_ind, line in enumerate(table_lines):
+        line_info = line.lstrip()
+        for ts in wellform_table_signs:
+            #in this case, a table should be started
+            #that means that next 6 lines need to be grabbed
+            if ts in line_info:
+                #the last table heading has a space
+                #now spaces represent distinct table entries
+                #the table has an empty space, we will fix this
+                mod_line_info1 = line_info.replace("t subj", "t_subj")
+                mod_line_info2 = mod_line_info1.replace("é comp", "é_comp")
+                mod_line_info3 = mod_line_info2.replace("Past perfect", "Past_perfect")
+                mod_line_info = mod_line_info3.replace("Past conditional", "Past_conditional")
+                ts_header = mod_line_info.split(" ")
+                ts_header.insert(0, "subj")
+                table_structure = PrettyTable()
+                table_structure.field_names = ts_header
+                je_row = table_lines[l_ind + 1].split(" ") 
+                table_structure.add_row(table_lines[l_ind + 1].split(" ")) 
+                table_structure.add_row(table_lines[l_ind + 2].split(" "))
+                table_structure.add_row(table_lines[l_ind + 3].split(" "))
+                table_structure.add_row(table_lines[l_ind + 4].split(" "))
+                table_structure.add_row(table_lines[l_ind + 5].split(" "))
+                table_structure.add_row(table_lines[l_ind + 6].split(" "))
+                print(table_structure)
+    driver.close()
+                
+
+selenium_scrape()
