@@ -32,15 +32,15 @@ for k,v in word_info[0].items():
                 #each of these dictionaries holds a list
                 #if this list is empty we skip
                 if vy != [] and isinstance(vy, list):
-                    print(ky + "\n")
+                    print(ky)
                     for vw in vy:
                         print("\t" + vw)
     elif k == "etymology":
-        v2 = v.replace(";", "\n\n")
-        v3 = v2.replace(".", "\n\n")
-        v4 = v3.replace(":", "\n\n")
-        v5 = v4.replace("),", "),\n\n")
-        print(s_word, k.upper(), "\n\n", v5)
+        v2 = v.replace(";", "\n")
+        v3 = v2.replace(".", "\n")
+        v4 = v3.replace(":", "\n")
+        v5 = v4.replace("),", "),\n")
+        print(s_word, k.upper(), "\n", v5)
     elif k == "pronunciations":
         print(k.upper(), "\n")
         for kq,vq in v.items():
