@@ -40,9 +40,9 @@ for k,v in word_info[0].items():
         v3 = v2.replace(".", "\n")
         v4 = v3.replace(":", "\n")
         v5 = v4.replace("),", "),\n")
-        print(s_word, k.upper(), "\n", v5)
+        print(s_word, k.upper(), v5)
     elif k == "pronunciations":
-        print(k.upper(), "\n")
+        print(k.upper())
         for kq,vq in v.items():
             if vq != []:
                 for vqq in vq:
