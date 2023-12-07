@@ -54,13 +54,19 @@ def gen_tail():
     </body>
     </html>
     '''
-
+'''
 def gen_download_p(displayname, link, codename):
     nlink = "routes/" + codename + ".html"
     rlink = "readable/" + codename + ".html"
     return f'''<a href={link} download={displayname}>{displayname}</a>
         <a href={nlink}><p style="text-align:right">Highlight Stream</p></a>
         <a href={rlink}><p style="text-align:right">Read Online</p></a>
+        <br>'''
+'''
+
+
+def gen_download_p(displayname, link, codename):
+    return f'''<a href={link} download={displayname}>{displayname}</a>
         <br>'''
 
 def strip_underscores(blurb):
@@ -115,7 +121,7 @@ def gen_wiki_page(codename):
     with open("routes/" + codename + ".html", "w") as wiki_out:
         wiki_out.write(wiki)
 
-
+'''
 def gen_book_table():
     #creates the html for the main body of the index and all supporting pages that link from there
     table = f'<div class="content" id="content">'
@@ -140,9 +146,29 @@ def gen_book_table():
         table += gen_download_p(book_data[0], book_data[1], book_data[2])
     table += "</div>"
     return table
-            
+'''            
 
-    table += f'</div>'
+def download_table():
+    #creates the html for the main body of the index and all supporting pages that link from there
+    table = f'<div class="content" id="content">'
+    #for each book, add gen p with a href
+    table_content = {"paper": [], "dissertation":[], "book": []}
+    with open("include/main_table_data.csv", "r") as table_data:
+        for line in [l.split("\n")[0] for l in table_data.readlines()]:
+            name, link, text_type, codename = line.split(",")
+            table_content[text_type].append((name, link, codename))
+            gen_wiki_page(codename)
+            if not os.path.isfile("readable/" + codename + ".html"):
+                gen_readable(codename, link)
+    table += "<p>Downloads</p>" 
+    for paper_data in table_content["paper"]:
+        table += gen_download_p(paper_data[0], paper_data[1], paper_data[2])
+    for dissertation_data in table_content["dissertation"]:
+        table += gen_download_p(dissertation_data[0], dissertation_data[1], dissertation_data[2])
+    for book_data in table_content["book"]:
+        table += gen_download_p(book_data[0], book_data[1], book_data[2])
+    table += "</div>"
+    return table
 
 def gen_index():
     xapi = load_todoist()
