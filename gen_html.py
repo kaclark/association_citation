@@ -145,10 +145,11 @@ def gen_book_table():
     table += f'</div>'
 
 def gen_index():
+    xapi = load_todoist()
     index = ""
     index += gen_head("Association Citation", wtype="main")
     index += gen_banner()
-    index += create_link_table(get_section(140213544, load_todoist()))
+    index += create_link_table(get_section(140213544, xapi), xapi)
     index += gen_book_table()
     index += gen_tail()
 
@@ -173,17 +174,25 @@ def get_section(s_id, api):
     except Exception as error:
         print(error)
 
+def comments_from_task_id(t_id, api):
+    try:
+        comments = api.get_comments(task_id=t_id)
+        return comments
+    except Exception as error:
+        print(error)
+
 def format_title(title):
     title1 = title.replace("[", "")
     title2 = title1.replace("]", ": ")
     title = title2.replace("_", " ")
     return title
 
-def get_table_row(title_task):
+def get_table_row(title_task, api):
     content = title_task.content
-    c_date = title_task.created_at.split("T")[0]
-    x_year, x_month, x_day = c_date.split("-")
-    cc_date = x_month + "/" + x_day + "/" + x_year[2:]
+    #c_date = title_task.created_at.split("T")[0]
+    #x_year, x_month, x_day = c_date.split("-")
+    #cc_date = x_month + "/" + x_day + "/" + x_year[2:]
+    cc_date = get_date_by_comment(title_task.id, api)
     clink = "livescans/" + content + ".html"
     p_content = format_title(content)
     return f'''<tr><td>
@@ -191,17 +200,29 @@ def get_table_row(title_task):
     <td>{cc_date}</td>
     </tr><tr></tr>
     '''
-def create_link_table(titles):
+def create_link_table(titles, api):
     #titles should be full task objects
     table_html = "<div class='content' id='content'>"
     table_html += "<h1>Livescans</h1>"
     table_html += "<table class='livescans'>"
     #todo: sort by latest comment and supply that date
-    titles.reverse()
-    for title in titles:
-        table_html += get_table_row(title)
+    dated_titles = sorted([[t] + get_date_by_comment(t.id, api).split("/") for t in titles], key=lambda x: (x[1], x[2], x[3]),reverse=True)
+    s_titles = [l[0] for l in dated_titles]
+    for title in s_titles:
+        table_html += get_table_row(title, api)
     table_html += "</table></div>"
     return table_html
     
+def get_date_by_comment(t_id, api):
+    test_c = comments_from_task_id(t_id, api)
+    x_dates = []
+    for c in test_c:
+        x_dates.append([int(w) for w in c.posted_at.split("T")[0].split("-")])
+    s_dates = sorted(x_dates, key=lambda x: (x[0], x[1], x[2]),reverse=True)
+    x_year, x_month, x_day = s_dates[0]
+    cc_date = str(x_month) + "/" + str(x_day) + "/" + str(x_year)[2:]
+    return cc_date
+
+
 #========RUNS=========#
 refresh()
