@@ -110,6 +110,8 @@ p code {
 
 .livescans {
 	font-size: 16px;
+	margin-left: auto;
+  	margin-right: auto;
 }
 
 #results img {
