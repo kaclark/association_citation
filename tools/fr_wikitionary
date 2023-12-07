@@ -34,7 +34,13 @@ for k,v in word_info[0].items():
                 if vy != [] and isinstance(vy, list):
                     print(ky)
                     for vw in vy:
-                        print("\t" + vw)
+                        if isinstance(vw, str):
+                            print("\t" + vw)
+                        elif isinstance(vw, dict):
+                            for kq, vq in vw.items():
+                                print(kq, vq)
+                        elif isinstance(vw, list):
+                            print(" ".join(vw))
     elif k == "etymology":
         v2 = v.replace(";", "\n")
         v3 = v2.replace(".", "\n")
