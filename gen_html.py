@@ -189,7 +189,7 @@ def get_table_row(title_task):
     return f'''<tr><td>
     <tr><td><a href={clink}>{p_content}</a></td>
     <td>{cc_date}</td>
-    </tr>
+    </tr><tr></tr>
     '''
 def create_link_table(titles):
     #titles should be full task objects
