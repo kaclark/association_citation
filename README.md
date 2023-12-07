@@ -5,40 +5,22 @@ https://kaclark.github.io/association_citation/<br>
 
 This project is a wiki-library that generates itself from texts and my highlights of texts available in a digital bookshelf. I can read, take notes, and generate this website from my android device's terminal emulator. I will organize my reading and eventually writing via recourse to this project.<br> 
 
-Poetry Memorization and French Translation with history will be rooted in Baudelaire<br>
-
-Notes on Scripts and Tools<br>
-Autocomment does not work on pixel; works on fedora linux<br>
 
 Major Goals: <br>
-[x] Finish Flowers of Evil metadata <br>
-[ ] Generate pages for textshelf entries <br>
+[ ] (Stage 4) Concept and Author Wikis for each pdf<br>
+[ ] (Narrativity) log and display reading notes<br>
+[ ] (Style) Make download button in livescan table<br> 
+[ ] Wiki page for each Author/Concept <br>
+[x] Integrate with todoist entries for text summary page auto-generation<br>
+[x] Display all livescan pages in large table<br>
+[x] Generate pages for textshelf entries <br>
 [x] (Code Base) Pull comments from todoist to build pages: <br>
 => https://developer.todoist.com/rest/v2/?javascript#get-all-comments <br>
-[ ] (Stage 3) Concept and Author Wikis for each pdf<br>
-[ ] (Narrativity) log and display reading notes<br>
-[ ] (Style) Make download, read, and distill for pdf into buttons(down arrow, book, bullet point(Primed)<br> 
-[ ] (Corpus) Output writing with glossory from bound ids<br>
-[ ] Integrate with todoist entries for text summary page auto-generation<br>
-[ ] Wiki page for each Book/Paper/Author (Primed) <br>
-[ ] Wiki search function<br>
-[ ] Display all wiki pages in large table<br>
 [x] In-site reading capacity<br>
 [x] Highlight stream page<br>
 [x] Digital Bookshelf <br>
 
-Reading Goals<br>
-[ ] (Bergson Metaphysics) Move highlights into notes<br>
-[ ] (Bergson and Plotinus) record Author("Plotinus")<br>
-[ ] (Truth and Method) record Author("Hegel")<br>
-[ ] (Truth and Method) record Concept("bildung")<br>
-[ ] (Truth and Method) record Concept("common sense")<br>
-[ ] (Truth and Method) record Author("Oetinger")<br>
-[ ] (Truth and Method) record Concept("taste")<br>
-
 TODO: <br>
-[ ] make book wiki page(concepts, highlights, summary) (Primed)<br>
-[ ] make wiki navigation bar(tabs)<br>
 [x] (Index) Add Bergson's Introduction to Metaphysics<br>
 [x] Generate Bookshelf on Webpage<br>
 [x] Output Notes to webpages<br>
