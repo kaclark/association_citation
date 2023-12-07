@@ -38,17 +38,9 @@ def selenium_scrape():
     #"Passé composé Past perfect Future perfect Past conditional Past subjunctive Pluperfect subj.",
     
     #chrome
-    '''
     options = webdriver.ChromeOptions()
     options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
-    '''
-    options = webdriver.FirefoxOptions()
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--headless=new")
-    driver = webdriver.Firefox(options=options)
-
     driver.get(url_base + verb)
     #print(driver.find_element(By.TAG_NAME, "body").text)
     table_info = driver.find_element(By.CLASS_NAME, "entry-content").text
