@@ -182,11 +182,13 @@ def format_title(title):
 def get_table_row(title_task):
     content = title_task.content
     c_date = title_task.created_at.split("T")[0]
+    x_year, x_month, x_day = c_date.split("-")
+    cc_date = x_month + "/" + x_day + "/" + x_year[2:]
     clink = "livescans/" + content + ".html"
     p_content = format_title(content)
     return f'''<tr><td>
     <tr><td><a href={clink}>{p_content}</a></td>
-    <td>{c_date}</td>
+    <td>{cc_date}</td>
     </tr>
     '''
 def create_link_table(titles):
