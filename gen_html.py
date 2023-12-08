@@ -163,7 +163,7 @@ def download_table():
     for paper_data in table_content["paper"]:
         table += gen_download_p(paper_data[0], paper_data[1], paper_data[2], "Paper")
     for dissertation_data in table_content["dissertation"]:
-        table += gen_download_p(dissertation_data[0], dissertation_data[1], dissertation_data[2], "PhD Sub")
+        table += gen_download_p(dissertation_data[0], dissertation_data[1], dissertation_data[2], "PhD")
     for book_data in table_content["book"]:
         table += gen_download_p(book_data[0], book_data[1], book_data[2], "Book")
 
