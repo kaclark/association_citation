@@ -161,11 +161,11 @@ def download_table():
 
     table += "<table class='livescans'>"
     for paper_data in table_content["paper"]:
-        table += gen_download_p(paper_data[0], paper_data[1], paper_data[2], "paper")
+        table += gen_download_p(paper_data[0], paper_data[1], paper_data[2], "Paper")
     for dissertation_data in table_content["dissertation"]:
-        table += gen_download_p(dissertation_data[0], dissertation_data[1], dissertation_data[2], "dissertation")
+        table += gen_download_p(dissertation_data[0], dissertation_data[1], dissertation_data[2], "PhD Sub")
     for book_data in table_content["book"]:
-        table += gen_download_p(book_data[0], book_data[1], book_data[2], "book")
+        table += gen_download_p(book_data[0], book_data[1], book_data[2], "Book")
 
     table += "</table>"
     table += "</div>"
