@@ -54,15 +54,13 @@ def gen_tail():
     </body>
     </html>
     '''
-'''
-def gen_download_p(displayname, link, codename):
+def FROZEN_gen_download_p(displayname, link, codename):
     nlink = "routes/" + codename + ".html"
     rlink = "readable/" + codename + ".html"
     return f'''<a href={link} download={displayname}>{displayname}</a>
         <a href={nlink}><p style="text-align:right">Highlight Stream</p></a>
         <a href={rlink}><p style="text-align:right">Read Online</p></a>
         <br>'''
-'''
 
 
 def gen_download_p(displayname, link, codename):
@@ -176,7 +174,7 @@ def gen_index():
     index += gen_head("Association Citation", wtype="main")
     index += gen_banner()
     index += create_link_table(get_section(140213544, xapi), xapi)
-    index += gen_book_table()
+    index += download_table()
     index += gen_tail()
 
     with open("index.html", "w") as index_out:
