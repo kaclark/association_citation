@@ -64,8 +64,7 @@ def FROZEN_gen_download_p(displayname, link, codename):
 
 
 def gen_download_p(displayname, link, codename):
-    return f'''<a href={link} download={displayname}>{displayname}</a>
-        <br>'''
+    return f'''<tr><td><a href={link} download={displayname}>{displayname}</a></tr></td>'''
 
 def strip_underscores(blurb):
     return " ".join(blurb.split("_"))
@@ -158,13 +157,17 @@ def download_table():
             gen_wiki_page(codename)
             if not os.path.isfile("readable/" + codename + ".html"):
                 gen_readable(codename, link)
-    table += "<p>Downloads</p>" 
+    table += "<h1>Downloads</h1>" 
+
+    table += "<table class='livescans'>"
     for paper_data in table_content["paper"]:
         table += gen_download_p(paper_data[0], paper_data[1], paper_data[2])
     for dissertation_data in table_content["dissertation"]:
         table += gen_download_p(dissertation_data[0], dissertation_data[1], dissertation_data[2])
     for book_data in table_content["book"]:
         table += gen_download_p(book_data[0], book_data[1], book_data[2])
+
+    table += "</table>"
     table += "</div>"
     return table
 
