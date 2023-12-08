@@ -64,7 +64,7 @@ def FROZEN_gen_download_p(displayname, link, codename):
 
 
 def gen_download_p(displayname, link, codename):
-    return f'''<tr><td><a href={link} download={displayname}>{displayname}</a></tr></td>'''
+    return f'''<tr><td><a href={link} download={displayname}>{displayname}</a></td></tr><tr></tr>'''
 
 def strip_underscores(blurb):
     return " ".join(blurb.split("_"))
