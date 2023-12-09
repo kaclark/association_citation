@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+
+import sys
+from todoist_api_python.api import TodoistAPI
+from todoist_api_python.models import Attachment, Comment, Task
+
+##########################
+#Helper Functions
+##########################
+
+def add_comment(x_task_id, x_comment, pg_num):
+    try:
+        if pg_num != "":
+            x_comment += " pg " + pg_num
+        api.add_comment(task_id=x_task_id, content=x_comment)
+    except Exception as error:
+        print(error)
+
+##########################
+#INFORMATION SETUP
+##########################
+#Gather the input from user
+x_task_id = sys.argv[1]
+x_comment = input("> ")
+x_pg_num =input("pg. ")
+if x_pg_num == "":
+    x_pg_num = ""
+
+#access api token
+with open("../api.token", "r") as key_in:
+    api = TodoistAPI(str(key_in.readlines()[0].split("\n")[0]))
+
+##########################
+#Send Data from todoist
+##########################
+add_comment(x_task_id, x_comment, x_pg_num)

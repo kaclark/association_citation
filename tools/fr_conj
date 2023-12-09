@@ -70,7 +70,7 @@ def selenium_scrape():
                 table_structure.add_row(table_lines[l_ind + 5].split(" "))
                 table_structure.add_row(table_lines[l_ind + 6].split(" "))
                 print(table_structure)
-    driver.close()
+    #driver.close()
                 
 
 selenium_scrape()
