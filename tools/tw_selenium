@@ -1,0 +1,85 @@
+#!/usr/bin/python3
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager 
+import sys
+import time
+import urllib
+import requests
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach", True)
+#options.add_argument(r"--user-data-dir=/home/kaclark/.config/google-chrome")
+#these options should attempt to load chrome with all user data
+#options.add_argument(r'--user-data-dir=')
+#PATH = "/Users/yourPath/Desktop/chromedriver"
+#driver = webdriver.Chrome(PATH, options=options)
+
+driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
+driver.get(sys.argv[1])
+time.sleep(2)
+tweet_info = driver.find_element(By.CLASS_NAME, "css-175oi2r").text
+#imgResults = driver.find_elements(By.XPATH,"//img[contains(@class,'css-9pa8cd')]")
+##img_info = driver.find_element(By.CLASS_NAME, "css-9pa8cd").
+
+ignore_set = [
+    'Don’t miss what’s happening', 
+    'People on X are the first to know.', 
+    'Log in', 
+    'Sign up', 
+    'Post', 
+    'Conversation',
+    'Follow',
+    '·',
+    ' Views',
+    ' Reposts',
+    ' Likes',
+    ' Bookmarks'
+]
+
+raw_info = tweet_info.split("\n")
+tweet_info = []
+for info in raw_info:
+    if info not in ignore_set:
+        tweet_info.append(info)
+
+info_map = {
+    'profile_name': '', 
+    'profile_account': '', 
+    'post_text': '', 
+    'post_date': '', 
+    'post_views': '',  
+    'reposts': '',  
+    'likes': '',  
+    'bookmarks': '',
+    'etc': ''
+}
+for k_ind, key in enumerate(info_map.keys()):
+    info_map[key] = tweet_info[k_ind]
+    
+#for kx, vx in info_map.items():
+#    print(kx, vx)
+
+
+def print_tweet(i_map):
+    #i_map: dictionary mapping of information tags to details
+    tweet_str = ""
+    tweet_str += "\n\t" + i_map['profile_name'] + "\n\t" + i_map['profile_account'] + "\n\n"
+    tweet_str += "\t" + i_map['post_text'] + "\n\n"
+    tweet_str += "\t" + i_map['post_date'] + " Views: " + i_map['post_views'] + "\n"
+    tweet_str += "\tRetweets: " + i_map['reposts'] + " Likes: " + i_map['likes'] + " Bookmarks: " + i_map['bookmarks'] + "\n"
+    print(tweet_str)
+
+print_tweet(info_map)
+
+'''
+src = []
+for img in imgResults:
+    src.append(img.get_attribute('src'))
+for i in range(len(src)):    
+    urllib.request.urlretrieve(str(src[i]),"tw_imgs/homepage_img{}.jpg".format(i))
+'''
+#print(driver.page_source)
+
