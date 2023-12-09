@@ -18,8 +18,9 @@ options.add_experimental_option("detach", True)
 #driver = webdriver.Chrome(PATH, options=options)
 
 driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
+#driver.get('chrome://settings/clearBrowserData')
 driver.get(sys.argv[1])
-time.sleep(2)
+time.sleep(1)
 tweet_info = driver.find_element(By.CLASS_NAME, "css-175oi2r").text
 #imgResults = driver.find_elements(By.XPATH,"//img[contains(@class,'css-9pa8cd')]")
 ##img_info = driver.find_element(By.CLASS_NAME, "css-9pa8cd").
@@ -36,29 +37,46 @@ ignore_set = [
     ' Views',
     ' Reposts',
     ' Likes',
-    ' Bookmarks'
+    ' Bookmarks',
+    'Translate post'
 ]
-
-raw_info = tweet_info.split("\n")
+message_glued2 = tweet_info.replace("\n\n", "@@@")
+message_glued = message_glued2.replace("]\n", "]@@@")
+raw_info = message_glued.split("\n")
 tweet_info = []
+rejected = []
 for info in raw_info:
     if info not in ignore_set:
         tweet_info.append(info)
+    else:
+        rejected.append(info)
 
 info_map = {
     'profile_name': '', 
     'profile_account': '', 
     'post_text': '', 
     'post_date': '', 
-    'post_views': '',  
-    'reposts': '',  
-    'likes': '',  
-    'bookmarks': '',
+    'views': '',  
+    'reposts': '0',  
+    'likes': '0',  
+    'bookmarks': '0',
     'etc': ''
 }
+
+expected_rejects = ['views', 'reposts', 'likes', 'bookmarks']
+formated_actual_rejects = [l.lstrip().lower() for l in rejected]
+missing_fields = []
+for reject in expected_rejects:
+    if reject not in formated_actual_rejects:
+        missing_fields.append(reject)
+
 for k_ind, key in enumerate(info_map.keys()):
+    if key in missing_fields:
+        tweet_info.insert(k_ind, '0')
     info_map[key] = tweet_info[k_ind]
-    
+   
+newlines_respliced = info_map['post_text'].replace("@@@", "\n\t")
+info_map['post_text'] = newlines_respliced
 #for kx, vx in info_map.items():
 #    print(kx, vx)
 
@@ -68,18 +86,16 @@ def print_tweet(i_map):
     tweet_str = ""
     tweet_str += "\n\t" + i_map['profile_name'] + "\n\t" + i_map['profile_account'] + "\n\n"
     tweet_str += "\t" + i_map['post_text'] + "\n\n"
-    tweet_str += "\t" + i_map['post_date'] + " Views: " + i_map['post_views'] + "\n"
+    tweet_str += "\t" + i_map['post_date'] + " Views: " + i_map['views'] + "\n"
     tweet_str += "\tRetweets: " + i_map['reposts'] + " Likes: " + i_map['likes'] + " Bookmarks: " + i_map['bookmarks'] + "\n"
     print(tweet_str)
 
 print_tweet(info_map)
+driver.close()
+#src = []
+#for img in imgResults:
+#    src.append(img.get_attribute('src'))
+#for i in range(len(src)):    
+#    urllib.request.urlretrieve(str(src[i]),"tw_imgs/homepage_img{}.jpg".format(i))
 
-'''
-src = []
-for img in imgResults:
-    src.append(img.get_attribute('src'))
-for i in range(len(src)):    
-    urllib.request.urlretrieve(str(src[i]),"tw_imgs/homepage_img{}.jpg".format(i))
-'''
 #print(driver.page_source)
-
