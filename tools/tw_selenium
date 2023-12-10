@@ -88,6 +88,10 @@ def print_tweet(i_map):
     tweet_str += "\t" + i_map['post_text'] + "\n\n"
     tweet_str += "\t" + i_map['post_date'] + " Views: " + i_map['views'] + "\n"
     tweet_str += "\tRetweets: " + i_map['reposts'] + " Likes: " + i_map['likes'] + " Bookmarks: " + i_map['bookmarks'] + "\n"
+    date_split = i_map['post_date'].split("·")
+    date_reformat = date_split[0].replace(" ", "_").replace(":","_") + date_split[-1].lstrip().replace(" ", "_").replace(",", "") 
+    with open("tw_dumps/" + date_reformat + ".txt", "w") as tw_dump:
+        tw_dump.write("\t" + i_map['post_text'] + "\n")
     print(tweet_str)
 
 print_tweet(info_map)
