@@ -76,10 +76,26 @@ for k_ind, key in enumerate(info_map.keys()):
     info_map[key] = tweet_info[k_ind]
    
 newlines_respliced = info_map['post_text'].replace("@@@", "\n\t")
+for nline in newlines_respliced.split("\n\t"):
+    if 'import' in nline:
+        try:
+            raw_author, raw_concept = nline.split('[')
+            concept = raw_concept.replace("]", "")
+            pre_author = raw_author.rstrip()
+            x_action, author = pre_author.split(" ")
+            print(x_action, author, concept)
+        except ValueError:
+            print(nline, "could not be partitioned properly")
+            pass
 info_map['post_text'] = newlines_respliced
 #for kx, vx in info_map.items():
 #    print(kx, vx)
 
+def parse_relations(x_action, x_source, x_target):
+    if x_action is "import":
+        #load available sources
+        #eg all_authors = load_authors()
+        #   return all_authors[x_source][x_target]
 
 def print_tweet(i_map):
     #i_map: dictionary mapping of information tags to details
@@ -93,6 +109,7 @@ def print_tweet(i_map):
     with open("tw_dumps/" + date_reformat + ".txt", "w") as tw_dump:
         tw_dump.write("\t" + i_map['post_text'] + "\n")
     print(tweet_str)
+    
 
 print_tweet(info_map)
 driver.close()
