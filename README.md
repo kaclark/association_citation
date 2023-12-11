@@ -7,6 +7,7 @@ Before the widespread adoption of the Hindu Numerals, letters doubled as numbers
 
 Major Goals: <br>
 [ ] (Stage 4) Concept and Author Wikis for each pdf<br>
+[ ] (Stage 3) Concept Deck<br>
 [x] (Stage 3) Livestream Page for each pdf<br>
 [x] (Stage 2) Text Extraction and Highlight Page for each pdf<br>
 [x] (Stage 1) Download Hub for pdfs<br>
@@ -14,6 +15,14 @@ Major Goals: <br>
 [x] Display all livescan pages in large table<br>
 
 TODO: <br>
+[ ] concept splice convention('binding motifs') <br>
+[ ] html autogen for concept <br>
+[ ] Proposition Parser <br>
+[ ] Concept script with options <br>
+[x] Concept DataStructure <br>
+[x] Propositional Summaries for recall (Samkhya |-- Vedanta |-- Shavism)  <br>
+[x] Concept data collection <br>
+
 [ ] Index and Citation list for each pdf <br>
 [ ] Networkx testing <br>
 [ ] Create Util file <br>
