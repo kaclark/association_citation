@@ -25,10 +25,12 @@ def get_comments_indexed_by_c_id(t_id):
         c_info = {
                 "text": x_comment.content,
                 "c_id": x_comment.id,
-                "t_id": t_id
+                "t_id": t_id,
+                "c_time": x_comment.posted_at
                 }
         #TODO: write function to associate chosen comment generative data with concept
         scan_select[x_comment.content] = c_info
+        return set_menu(list(scan_select.keys()), scan_select)
         print(c_text, c_id)
     return "works"
 
