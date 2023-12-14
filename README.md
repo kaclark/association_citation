@@ -15,6 +15,7 @@ Major Goals: <br>
 [x] Display all livescan pages in large table<br>
 
 TODO: <br>
+[ ] (autocomment) condition for word stitching (remove spaces with newline replacment if next entry is letter and not space) 
 [ ] concept splice convention('binding motifs') <br>
 [ ] html autogen for concept <br>
 [ ] Proposition Parser <br>
