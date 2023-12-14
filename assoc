@@ -235,7 +235,7 @@ def create_link_table(titles, api):
     table_html += "<h1>Livescans</h1>"
     table_html += "<table class='livescans'>"
     #todo: sort by latest comment and supply that date
-    dated_titles = sorted([[t] + get_date_by_comment(t.id, api).split("/") for t in titles], key=lambda x: (x[1], x[2], x[3]),reverse=True)
+    dated_titles = sorted([[t] + get_date_by_comment(t.id, api).split("/") for t in titles], key=lambda x: (x[3], x[1], x[2]),reverse=True)
     s_titles = [l[0] for l in dated_titles]
     for title in s_titles:
         table_html += get_table_row(title, api)
