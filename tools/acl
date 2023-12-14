@@ -32,7 +32,7 @@ if x_pg_num == "":
 x_task_id = sys.argv[1]
 
 #access api token
-with open("../api.token", "r") as key_in:
+with open("api.token", "r") as key_in:
     api = TodoistAPI(str(key_in.readlines()[0].split("\n")[0]))
 
 ##########################
