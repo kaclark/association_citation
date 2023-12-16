@@ -92,10 +92,11 @@ info_map['post_text'] = newlines_respliced
 #    print(kx, vx)
 
 def parse_relations(x_action, x_source, x_target):
-    if x_action is "import":
+    if x_action == "import":
         #load available sources
         #eg all_authors = load_authors()
         #   return all_authors[x_source][x_target]
+        pass
 
 def print_tweet(i_map):
     #i_map: dictionary mapping of information tags to details
