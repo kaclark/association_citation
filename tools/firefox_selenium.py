@@ -1,11 +1,12 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
 import sys
-import time
 
 options = Options()
 options.add_argument('-headless')
 driver = webdriver.Firefox(options=options)
-res = driver.get("http://google.com/")
-print ("Headless Firefox Initialized")
+driver.get(sys.argv[1])
+tweet_info = driver.find_element(By.CLASS_NAME, "css-175oi2r").text
+print(tweet_info)
 driver.quit()
