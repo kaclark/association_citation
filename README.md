@@ -8,6 +8,7 @@ Before the widespread adoption of the Hindu Numerals, letters doubled as numbers
 Major Goals: <br>
 [ ] (Stage 4) Concept and Author Wikis for each pdf<br>
 [ ] (Stage 3) Concept Deck<br>
+[ ] (Stage 3) Add YouTube Podcast link<br>
 [x] (Stage 3) Livestream Page for each pdf<br>
 [x] (Stage 2) Text Extraction and Highlight Page for each pdf<br>
 [x] (Stage 1) Download Hub for pdfs<br>
