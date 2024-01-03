@@ -74,4 +74,4 @@ def open_browser(c_links):
         driver.execute_script('window.open("{}", "_blank");'.format(c_l))
 
 
-open_browser()
+open_browser(cl_links)
