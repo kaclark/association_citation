@@ -1,5 +1,8 @@
 <script type="text/javascript" src="https://sdk.userbase.com/2/userbase.js"></script>
 <script type="text/javascript">
+
+//this can only be ran with new username and password
+//frozen until ready to test with more users
 async function start() { 
 
   userbase.init({ 
@@ -29,7 +32,23 @@ async function start() {
 
 }
 
+//should be pressed first
 async function get_user() { 
+
+  userbase.init({ 
+    appId: 'f3dece1f-eb4b-4a40-bab7-bf63746e1c8d'
+  })
+  
+  title.innerText = 'Retreiving account...'
+  await userbase.signIn({ 
+    username: "test_acct",
+    password: "test_psswrd"
+  })
+
+}
+
+//pressed second
+async function push_data() { 
 
   userbase.init({ 
     appId: 'f3dece1f-eb4b-4a40-bab7-bf63746e1c8d'
@@ -49,6 +68,11 @@ async function get_user() {
         title.innerText = items[0].item
       }
     }
+  })
+
+  await userbase.insertItem({
+    databaseName: 'demo',
+    item: 'Hegel is always around the Corner'
   })
 
   await userbase.getDatabases().then((databases) => {
@@ -72,6 +96,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
       button2.style.display = 'none'
       if (sessionStorage) sessionStorage.clear()
       get_user()
+    })
+
+    const button3 = document.getElementById('btn3')
+    button3.addEventListener('click', function () { 
+      button3.style.display = 'none'
+      if (sessionStorage) sessionStorage.clear()
+      push_data()
     })
 });
 </script>
