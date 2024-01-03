@@ -67,9 +67,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
     })
     const title = document.getElementById('title')
 
-    const button = document.getElementById('btn2')
-    button.addEventListener('click', function () { 
-      button.style.display = 'none'
+    const button2 = document.getElementById('btn2')
+    button2.addEventListener('click', function () { 
+      button2.style.display = 'none'
       if (sessionStorage) sessionStorage.clear()
       get_user()
     })
