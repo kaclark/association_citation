@@ -120,7 +120,7 @@ def test_button():
     <div class="outer-wrap">
       <h1 id="title"></h1>
       <div class="button-container">
-        <a id="btn2" class="btn btn-1">
+        <a id="btn3" class="btn btn-1">
           <svg>
             <rect x="0" y="0" fill="none" width="100%" height="100%"/>
           </svg>
