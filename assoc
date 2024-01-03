@@ -186,7 +186,6 @@ def gen_index():
     index = ""
     index += gen_head("Association Citation", wtype="main")
     index += gen_banner()
-    index += insta_inject()
     index += create_link_table(get_section(140213544, xapi), xapi)
     index += download_table()
     index += gen_tail()
