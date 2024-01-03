@@ -73,6 +73,14 @@ def insta_inject():
     {injection}
     '''
 
+def yt_inject():
+    with open("yt_embed.html", "r") as html_inject:
+        injection = [l.split("\n")[0] for l in html_inject.readlines()]
+    injection = "".join(injection)
+    return f'''
+    {injection}
+    '''
+
 def gen_download_p(displayname, link, codename, xtype):
     return f'''<tr><td><a href={link} download={displayname}>{displayname}</a></td><td>{xtype}</td></tr><tr></tr>'''
 
@@ -186,6 +194,8 @@ def gen_index():
     index = ""
     index += gen_head("Association Citation", wtype="main")
     index += gen_banner()
+    index += insta_inject()
+    index += yt_inject()
     index += create_link_table(get_section(140213544, xapi), xapi)
     index += download_table()
     index += gen_tail()

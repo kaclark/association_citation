@@ -50,18 +50,23 @@ def get_comment_links(x_comments):
                         c_links.append(elt)
     return c_links
 
-options = webdriver.ChromeOptions()
-options.add_experimental_option("detach", True)
-
-driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
 
 with open("api.token", "r") as key_in:
     api = TodoistAPI(str(key_in.readlines()[0].split("\n")[0]))
 
 v_id = 7523511490
 x_comments = comments_from_task_id(v_id)
-c_links = get_comment_links(x_comments)
+cl_links = get_comment_links(x_comments)
+for c_l in cl_links:
+    if "http" in c_l:
+        if "youtube" in c_l:
+            print(c_l)
 
-driver.get(c_links[0])
-for c_l in c_links[1:]:
-    driver.execute_script('window.open("{}", "_blank");'.format(c_l))
+def open_browser(c_links):
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option("detach", True)
+
+    driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
+    driver.get(c_links[0])
+    for c_l in c_links[1:]:
+        driver.execute_script('window.open("{}", "_blank");'.format(c_l))
