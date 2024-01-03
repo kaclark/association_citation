@@ -219,8 +219,8 @@ def gen_index():
     index = ""
     index += gen_head("Association Citation", wtype="main")
     index += javascript_inject()
-    index += test_button()
     index += gen_banner()
+    index += test_button()
     index += yt_inject()
     index += create_link_table(get_section(140213544, xapi), xapi)
     index += download_table()
