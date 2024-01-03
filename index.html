@@ -39,13 +39,15 @@ async function start() {
 }
 
 // code for the start button
-const button = document.getElementById('btn')
-button.addEventListener('click', function () { 
-  button.style.display = 'none'
-  if (sessionStorage) sessionStorage.clear()
-  start()
-})
-const title = document.getElementById('title')
+window.addEventListener("DOMContentLoaded", (event) => {
+    const button = document.getElementById('btn')
+    button.addEventListener('click', function () { 
+      button.style.display = 'none'
+      if (sessionStorage) sessionStorage.clear()
+      start()
+    })
+    const title = document.getElementById('title')
+});
 </script>
     
     <div class="outer-wrap">
