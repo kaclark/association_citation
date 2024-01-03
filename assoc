@@ -88,7 +88,7 @@ def javascript_inject():
         injection = [l.split("\n")[0] for l in js_in.readlines()]
     injection = "".join(injection)
     return f'''
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="./include/jquery-3.7.1.min.js"></script>
     {injection}
     '''
 
