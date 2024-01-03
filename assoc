@@ -128,6 +128,19 @@ def test_button():
         </a>
       </div>
     </div>
+
+    <div class="outer-wrap">
+    <p id="post"></p>
+    <div class="button-container">
+        <a id="btn4" class="btn btn-1">
+          <svg>
+            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+          </svg>
+          [Post]
+        </a>
+      </div>
+    </div>
+            
     '''
 
 def gen_download_p(displayname, link, codename, xtype):

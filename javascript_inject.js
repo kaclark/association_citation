@@ -59,6 +59,7 @@ async function push_data() {
     databaseName: 'demo',
     changeHandler: function (items) {     
       console.log(items)
+      post.innerText = items[items.length -1].item	
       for (let i = 0; i < items.length; i++){
 	console.log(items[i].itemId, items[i].item)
       }
@@ -67,17 +68,19 @@ async function push_data() {
       }
     }
   })
-
-  await userbase.insertItem({
-    databaseName: 'demo',
-    item: 'Hegel is always around the Corner'
-  })
+ 
+  //Frozen until we need to add more posts
+  //await userbase.insertItem({
+  //  databaseName: 'demo',
+  //  item: 'Hegel is always around the Corner'
+  //})
 
   await userbase.getDatabases().then((databases) => {
       console.log(databases)
   })
 
 }
+
 
 // code for the start button
 window.addEventListener("DOMContentLoaded", (event) => {

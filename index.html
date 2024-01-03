@@ -68,6 +68,7 @@ async function push_data() {
     databaseName: 'demo',
     changeHandler: function (items) {     
       console.log(items)
+      post.innerText = items[items.length -1].item	
       for (let i = 0; i < items.length; i++){
 	console.log(items[i].itemId, items[i].item)
       }
@@ -76,17 +77,19 @@ async function push_data() {
       }
     }
   })
-
-  await userbase.insertItem({
-    databaseName: 'demo',
-    item: 'Hegel is always around the Corner'
-  })
+ 
+  //Frozen until we need to add more posts
+  //await userbase.insertItem({
+  //  databaseName: 'demo',
+  //  item: 'Hegel is always around the Corner'
+  //})
 
   await userbase.getDatabases().then((databases) => {
       console.log(databases)
   })
 
 }
+
 
 // code for the start button
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -156,6 +159,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
         </a>
       </div>
     </div>
+
+    <div class="outer-wrap">
+    <p id="post"></p>
+    <div class="button-container">
+        <a id="btn4" class="btn btn-1">
+          <svg>
+            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+          </svg>
+          [Post]
+        </a>
+      </div>
+    </div>
+            
     
     <div class="content" id="content">
     <iframe width="709" height="399" src="https://www.youtube.com/embed/3xgdi1nfsCs" title="Plotnitsky - Badiou and Grothendieck Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
