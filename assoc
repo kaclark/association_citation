@@ -78,9 +78,18 @@ def yt_inject():
         injection = [l.split("\n")[0] for l in html_inject.readlines()]
     injection = "".join(injection)
     return f'''
-    <div class="content" id="content">'
+    <div class="content" id="content">
     {injection}
     </div>
+    '''
+
+def javascript_inject():
+    with open("javascript_inject.js", "r") as js_in:
+        injection = [l.split("\n")[0] for l in js_in.readlines()]
+    injection = "".join(injection)
+    return f'''
+    <script src="jquery-3.7.1.min.js"></script>
+    {injection}
     '''
 
 def gen_download_p(displayname, link, codename, xtype):
@@ -195,6 +204,7 @@ def gen_index():
     xapi = load_todoist()
     index = ""
     index += gen_head("Association Citation", wtype="main")
+    index += javascript_inject()
     index += gen_banner()
     index += yt_inject()
     index += create_link_table(get_section(140213544, xapi), xapi)
