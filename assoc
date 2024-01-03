@@ -91,6 +91,21 @@ def javascript_inject():
     {injection}
     '''
 
+def test_button():
+    return f'''
+    <div class="outer-wrap">
+      <h1 id="title"></h1>
+      <div class="button-container">
+        <a id="btn" class="btn btn-1">
+          <svg>
+            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+          </svg>
+          Start
+        </a>
+      </div>
+    </div>
+    '''
+
 def gen_download_p(displayname, link, codename, xtype):
     return f'''<tr><td><a href={link} download={displayname}>{displayname}</a></td><td>{xtype}</td></tr><tr></tr>'''
 
@@ -204,6 +219,7 @@ def gen_index():
     index = ""
     index += gen_head("Association Citation", wtype="main")
     index += javascript_inject()
+    index += test_button()
     index += gen_banner()
     index += yt_inject()
     index += create_link_table(get_section(140213544, xapi), xapi)

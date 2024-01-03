@@ -9,30 +9,56 @@
         
     <script type="text/javascript" src="https://sdk.userbase.com/2/userbase.js"></script>
 <script type="text/javascript">
-  userbase.init({appId: "f3dece1f-eb4b-4a40-bab7-bf63746e1c8d"
-  }).then((session) => {
-      if (session.user) {
-	console.log(session)
+async function start() { 
+
+  userbase.init({ 
+    appId: 'f3dece1f-eb4b-4a40-bab7-bf63746e1c8d"
+  })
+  
+  title.innerText = 'Creating an account...'
+  await userbase.signUp({ 
+    username: uuidv4(),
+    password: uuidv4()
+  })
+
+  title.innerText = 'Opening database...'
+  await userbase.openDatabase({
+    databaseName: 'demo',
+    changeHandler: function (items) {     
+      if (items.length) {
+        title.innerText = items[0].item
       }
-  }).catch(e) => console.error(e))
-	
-  userbase.signUp({
-      username: "test_kaclark",
-      password: "test_passwrd",
-      profile: "nonmarkov_field",
-      email: "kaclark@mit.edu",
-      rememberMe: "local"
-  }).then(user) => {
-      console.log(user)
-  }).catch((e) => console.error(e))
+    }
+  })
 
-  userbase.signIn({
-      username: "test_kaclark",
-      password: "test_passwrd",
-  }).then((user) => {
-  }).catch((e) => console.error(e))
+  await userbase.insertItem({
+    databaseName: 'demo',
+    item: 'Hello world!\n\n<end-to-end encrypted>'
+  })
 
+}
+
+// code for the start button
+const button = document.getElementById('btn')
+button.addEventListener('click', function () { 
+  button.style.display = 'none'
+  if (sessionStorage) sessionStorage.clear()
+  start()
+})
+const title = document.getElementById('title')
 </script>
+    
+    <div class="outer-wrap">
+      <h1 id="title"></h1>
+      <div class="button-container">
+        <a id="btn" class="btn btn-1">
+          <svg>
+            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+          </svg>
+          Start
+        </a>
+      </div>
+    </div>
      <div class="content">
     <h1>Association Citation</h1>
 	<div class='teaser-box'>
