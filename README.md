@@ -14,7 +14,6 @@ Major Goals: <br>
 [ ] (Stage 4) Concept and Author Wikis for each pdf<br>
 [ ] (Stage 3) Concept Deck[Trading Cards?]<br>
 [ ] (Stage 3) Add YouTube Podcast link<br>
-[ ] (Stage 3) Embed webarchive downloads in table href<br>
 [ ] (Stage 3) Table of Bookmarked Entries with IBSNs<br>
 [x] (Stage 3) Livestream Page for each pdf<br>
 [x] (Stage 2) Text Extraction and Highlight Page for each pdf<br>
@@ -29,6 +28,7 @@ TODO: <br>
 [x] (*) Lilvid Page Insta Embed html injection<br>
 [x] [Primer(*)] Lilvid Page YouTube Embed html injection<br>
 [ ] (redudancy control) keep track of comments associated with existing livescan pages and only update upon change <br>
+[ ] Embed webarchive downloads in table href<br>
 [ ] (autocomment) condition for word stitching (remove spaces with newline replacment if next entry is letter and not space) <br> 
 [ ] concept splice convention('binding motifs') <br>
 [ ] html autogen for concept <br>
