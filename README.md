@@ -26,7 +26,7 @@ TODO: <br>
 [ ] (*) Set up User Account<br>
 [ ] (*) Lilvid All Page(button a href) <br>
 [ ] (*) Lilvid Refresh Page(button a href)[.txt record]<br>
-[ ] (*) Lilvid Page Insta Embed html injection<br>
+[x] (*) Lilvid Page Insta Embed html injection<br>
 [x] [Primer(*)] Lilvid Page YouTube Embed html injection<br>
 [ ] (redudancy control) keep track of comments associated with existing livescan pages and only update upon change <br>
 [ ] (autocomment) condition for word stitching (remove spaces with newline replacment if next entry is letter and not space) <br> 
