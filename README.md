@@ -23,6 +23,7 @@ Major Goals: <br>
 
 TODO: <br>
 [ ] (*) Set up User Account<br>
+[ ] Explore: https://userbase.com/docs/sdk/<br>
 [ ] (*) Lilvid All Page(button a href) <br>
 [ ] (*) Lilvid Refresh Page(button a href)[.txt record]<br>
 [x] (*) Lilvid Page Insta Embed html injection<br>
