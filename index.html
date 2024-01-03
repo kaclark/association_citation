@@ -7,8 +7,7 @@
         </head>
         <body>
         
-    <script src="./include/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript">$(document).ready(function(){$.getJSON("userbase_id.json", function(data){console.log(data)});});</script>
+    <script type="text/javascript" src="https://sdk.userbase.com/2/userbase.js"></script><script type="text/javascript">  userbase.init({appId: "f3dece1f-eb4b-4a40-bab7-bf63746e1c8d"}).then((session) => {      if (session.user) {	  console.log(session.user.username)      }  }).catch(e) => console.error(e))</script>
      <div class="content">
     <h1>Association Citation</h1>
 	<div class='teaser-box'>
