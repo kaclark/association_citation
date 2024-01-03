@@ -1,0 +1,67 @@
+#!/usr/bin/python3
+
+from todoist_api_python.api import TodoistAPI
+from todoist_api_python.models import Attachment, Comment, Task
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+import sys
+import time
+import urllib
+import requests
+
+def comments_from_task_id(t_id):
+    try:
+        comments = api.get_comments(task_id=t_id)
+        return [c.content for c in comments]
+    except Exception as error:
+        print(error)
+
+def get_comment_detailed(x_comments):
+    for x_c in x_comments:
+        comment_data = {"link":"","etc":""}
+        #catch comments with links
+        if "https" in x_c:
+            #break up comment
+            for x_elt in x_c.split("\n"):
+                for elt in x_elt.split(" "):
+                    #search for link
+                    if "https" not in elt:
+                        if elt != "":
+                                comment_data["etc"] += elt
+                    else:
+                        comment_data["link"] = elt
+                        print("$$$", elt)
+                        c_links.append(elt)
+            #print(comment_data["etc"], comment_data["link"])
+        else:
+            #print(x_c, "!!!")
+            pass
+
+def get_comment_links(x_comments):
+    c_links = []
+    for x_c in x_comments:
+        if "https" in x_c:
+            for x_elt in x_c.split("\n"):
+                for elt in x_elt.split(" "):
+                    if "https" in elt:
+                        c_links.append(elt)
+    return c_links
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach", True)
+
+driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
+
+with open("api.token", "r") as key_in:
+    api = TodoistAPI(str(key_in.readlines()[0].split("\n")[0]))
+
+v_id = 7523511490
+x_comments = comments_from_task_id(v_id)
+c_links = get_comment_links(x_comments)
+
+driver.get(c_links[0])
+for c_l in c_links[1:]:
+    driver.execute_script('window.open("{}", "_blank");'.format(c_l))
