@@ -15,6 +15,8 @@ Major Goals: <br>
 [ ] (Stage 3) Concept Deck[Trading Cards?]<br>
 [ ] (Stage 3) Add YouTube Podcast link<br>
 [ ] (Stage 3) Table of Bookmarked Entries with IBSNs<br>
+[ ] (Stage 3) User Profiles<br>
+[ ] (Stage 3) Timeline-Home Page<br>
 [x] (Stage 3) Livestream Page for each pdf<br>
 [x] (Stage 2) Text Extraction and Highlight Page for each pdf<br>
 [x] (Stage 1) Download Hub for pdfs<br>
@@ -22,7 +24,10 @@ Major Goals: <br>
 [x] Display all livescan pages in large table<br>
 
 TODO: <br>
-[ ] (*) Set up User Account<br>
+[ ] (#) Reach out to select alpha testers<br>
+[ ] (#) Twitter Mimic from database<br>
+[ ] (#) Use headerless selenium webscraping to extract tweet information and store in database<br>
+[x] [Primer(#)] Set up User Account<br>
 [ ] (*) Lilvid All Page(button a href) <br>
 [ ] (*) Lilvid Refresh Page(button a href)[.txt record]<br>
 [x] (*) Lilvid Page Insta Embed html injection<br>
@@ -34,12 +39,15 @@ TODO: <br>
 [ ] html autogen for concept <br>
 [ ] Proposition Parser <br>
 [ ] Concept script with options <br>
+[ ] Add Image Capture for livescans<br>
+[ ] Selenium post images on Twitter<br>
 [x] Concept DataStructure <br>
 [x] Propositional Summaries for recall (Samkhya |-- Vedanta |-- Shavism)  <br>
 [x] Concept data collection <br>
 
 [ ] Index and Citation list for each pdf <br>
-[ ] Networkx testing <br>
+[x] Networkx testing <br>
+[ ] Networkx autographs<br>
 [ ] Create Util file <br>
 [ ] Add Manual Section for tools <br>
 [ ] Comment Code Clearly <br>
