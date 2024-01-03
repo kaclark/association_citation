@@ -17,8 +17,8 @@ async function start() {
   
   title.innerText = 'Creating an account...'
   await userbase.signUp({ 
-    username: uuidv4(),
-    password: uuidv4()
+    username: "test_acct",
+    password: "test_psswrd"
   })
 
   title.innerText = 'Opening database...'
