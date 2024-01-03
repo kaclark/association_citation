@@ -29,7 +29,7 @@ async function start() {
 
 }
 
-async function return() { 
+async function get_user() { 
 
   userbase.init({ 
     appId: 'f3dece1f-eb4b-4a40-bab7-bf63746e1c8d'
@@ -71,7 +71,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     button.addEventListener('click', function () { 
       button.style.display = 'none'
       if (sessionStorage) sessionStorage.clear()
-      return()
+      get_user()
     })
 });
 </script>
