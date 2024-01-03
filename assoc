@@ -65,7 +65,7 @@ def FROZEN_gen_download_p(displayname, link, codename):
         <br>'''
 
 def insta_inject():
-    with open("insta_embed.html", "r") as html_inject:
+    with open("./include/insta_embed.html", "r") as html_inject:
         injection = [l.split("\n")[0] for l in html_inject.readlines()]
     injection = "".join(injection)
     return f'''
@@ -74,7 +74,7 @@ def insta_inject():
     '''
 
 def yt_inject():
-    with open("yt_embed.html", "r") as html_inject:
+    with open("./include/yt_embed.html", "r") as html_inject:
         injection = [l.split("\n")[0] for l in html_inject.readlines()]
     injection = "".join(injection)
     return f'''
