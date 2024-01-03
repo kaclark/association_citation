@@ -3,11 +3,16 @@
 Main Site(Github.io): <br> 
 https://kaclark.github.io/association_citation/<br>
 
-Before the widespread adoption of the Hindu Numerals, letters doubled as numbers. That from which we craft poetry is at once capable of computation. Ibn Sina learned our Hindu Numerals in an esoteric context. The letter is powerful. Scrolls were a technology superior to rock engraving in some ways, but ultimately the codex emerged from history as the fire of the psychological. Today I have the great privilege to treat the codex as a data structure and to interface it with more recent data structures.<br>
+Generative Website code and tools for digital textual practices.<br>
+Subset of code works on Fedora Terminal<br>
+Subset of code works on Termux<br>
+Headerless Webscraping works on Termux<br>
+Browser automation on Terminal<br>
+Subproject for tools that load video shorts<br>
 
 Major Goals: <br>
 [ ] (Stage 4) Concept and Author Wikis for each pdf<br>
-[ ] (Stage 3) Concept Deck<br>
+[ ] (Stage 3) Concept Deck[Trading Cards?]<br>
 [ ] (Stage 3) Add YouTube Podcast link<br>
 [ ] (Stage 3) Embed webarchive downloads in table href<br>
 [ ] (Stage 3) Table of Bookmarked Entries with IBSNs<br>
@@ -18,6 +23,11 @@ Major Goals: <br>
 [x] Display all livescan pages in large table<br>
 
 TODO: <br>
+[ ] (*) Set up User Account<br>
+[ ] (*) Lilvid All Page(button a href) <br>
+[ ] (*) Lilvid Refresh Page(button a href)[.txt record]<br>
+[ ] (*) Lilvid Page Insta Embed html injection<br>
+[x] [Primer(*)] Lilvid Page YouTube Embed html injection<br>
 [ ] (redudancy control) keep track of comments associated with existing livescan pages and only update upon change <br>
 [ ] (autocomment) condition for word stitching (remove spaces with newline replacment if next entry is letter and not space) <br> 
 [ ] concept splice convention('binding motifs') <br>
