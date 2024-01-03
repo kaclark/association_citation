@@ -10,6 +10,7 @@ Major Goals: <br>
 [ ] (Stage 3) Concept Deck<br>
 [ ] (Stage 3) Add YouTube Podcast link<br>
 [ ] (Stage 3) Embed webarchive downloads in table href<br>
+[ ] (Stage 3) Table of Bookmarked Entries with IBSNs<br>
 [x] (Stage 3) Livestream Page for each pdf<br>
 [x] (Stage 2) Text Extraction and Highlight Page for each pdf<br>
 [x] (Stage 1) Download Hub for pdfs<br>
