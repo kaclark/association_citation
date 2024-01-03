@@ -255,7 +255,7 @@ def gen_index():
     xapi = load_todoist()
     index = ""
     index += gen_head("Association Citation", wtype="main")
-    index += javascript_inject()
+    #index += javascript_inject()
     index += gen_banner()
     #index += test_button()
     index += yt_inject()
