@@ -86,7 +86,7 @@ def yt_inject():
 def javascript_inject():
     with open("javascript_inject.js", "r") as js_in:
         injection = [l.split("\n")[0] for l in js_in.readlines()]
-    injection = "".join(injection)
+    injection = "\n".join(injection)
     return f'''
     {injection}
     '''

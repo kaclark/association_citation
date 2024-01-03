@@ -7,7 +7,32 @@
         </head>
         <body>
         
-    <script type="text/javascript" src="https://sdk.userbase.com/2/userbase.js"></script><script type="text/javascript">  userbase.init({appId: "f3dece1f-eb4b-4a40-bab7-bf63746e1c8d"  }).then((session) => {      if (session.user) {	console.log(session)      }  }).catch(e) => console.error(e))	  userbase.signUp({      username: "test_kaclark",      password: "test_passwrd",      profile: "nonmarkov_field",      email: "kaclark@mit.edu",      rememberMe: "local"  }).then(user) => {      console.log(user)  }).catch((e) => console.error(e))  userbase.signIn({      username: "test_kaclark",      password: "test_passwrd",  }).then((user) => {  }).catch((e) => console.error(e))</script>
+    <script type="text/javascript" src="https://sdk.userbase.com/2/userbase.js"></script>
+<script type="text/javascript">
+  userbase.init({appId: "f3dece1f-eb4b-4a40-bab7-bf63746e1c8d"
+  }).then((session) => {
+      if (session.user) {
+	console.log(session)
+      }
+  }).catch(e) => console.error(e))
+	
+  userbase.signUp({
+      username: "test_kaclark",
+      password: "test_passwrd",
+      profile: "nonmarkov_field",
+      email: "kaclark@mit.edu",
+      rememberMe: "local"
+  }).then(user) => {
+      console.log(user)
+  }).catch((e) => console.error(e))
+
+  userbase.signIn({
+      username: "test_kaclark",
+      password: "test_passwrd",
+  }).then((user) => {
+  }).catch((e) => console.error(e))
+
+</script>
      <div class="content">
     <h1>Association Citation</h1>
 	<div class='teaser-box'>
