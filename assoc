@@ -83,6 +83,16 @@ def yt_inject():
     </div>
     '''
 
+def pdf_inject():
+    with open("./include/pdf_inject.html", "r") as html_inject:
+        injection = [l.split("\n")[0] for l in html_inject.readlines()]
+    injection = "".join(injection)
+    return f'''
+    <div class="content" id="content">
+    {injection}
+    </div>
+    '''
+
 def javascript_inject():
     with open("javascript_inject.js", "r") as js_in:
         injection = [l.split("\n")[0] for l in js_in.readlines()]
@@ -259,6 +269,7 @@ def gen_index():
     index += gen_banner()
     #index += test_button()
     index += yt_inject()
+    index += pdf_inject()
     index += create_link_table(get_section(140213544, xapi), xapi)
     index += download_table()
     index += gen_tail()
