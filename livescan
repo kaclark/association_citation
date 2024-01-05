@@ -48,6 +48,7 @@ def gen_head(title):
 def gen_header(title, ref_info):
     if "]" in title:
         title = title.split("]")[-1]
+    print("TITLE", title)
     mod_mtitle = "../include/texts/" + title + ".pdf"
     mtitle = strip_underscores(title)
     return f'''
