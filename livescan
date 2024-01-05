@@ -47,7 +47,7 @@ def gen_head(title):
 
 def gen_header(title, ref_info):
     mtitle = strip_underscores(title)
-    mod_mtitle = "../include/texts/" + mtitle + ".pdf"
+    mod_mtitle = "../include/texts/" + title + ".pdf"
     return f'''
     <body>
     <div class="content">
