@@ -47,11 +47,12 @@ def gen_head(title):
 
 def gen_header(title, ref_info):
     mtitle = strip_underscores(title)
+    mod_mtitle = "../include/texts/" + mtitle + ".pdf"
     return f'''
     <body>
     <div class="content">
         <h1>{mtitle}</h1>
-        <p>{ref_info}</p>
+        <iframe src={mod_mtitle} width=700 height=400></iframe>
     </div>
     <div class="content" id="content">
     '''
