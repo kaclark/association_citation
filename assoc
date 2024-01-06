@@ -39,7 +39,10 @@ def gen_banner():
 	<img class='teaser-img' src='include/img/pi_over_four.png'></img>
 	</div>
 	<h2>Stage 4: Comment Frenzy<h2>
-    <a href="./twitter_gallery.html">Twitter Gallery(Click Here)</a>
+        <a href="./twitter_gallery.html">
+            <img class='twitter-logo' src='include/img/twitter_logo.jpg'></img>
+            Twitter Gallery
+        </a>
     </div>
     '''
 
