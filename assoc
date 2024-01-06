@@ -100,15 +100,8 @@ def javascript_inject():
     return f'''
     {injection}
     '''
-def chat_inject():
-    with open("./include/chat_inject.html", "r") as js_in:
-        injection = [l.split("\n")[0] for l in js_in.readlines()]
-    injection = "\n".join(injection)
-    return f'''
-    {injection}
-    '''
-def calendar_inject():
-    with open("./include/calendar_inject.html", "r") as js_in:
+def comment_inject():
+    with open("./include/comment_inject.html", "r") as js_in:
         injection = [l.split("\n")[0] for l in js_in.readlines()]
     injection = "\n".join(injection)
     return f'''
@@ -281,13 +274,12 @@ def gen_index():
     index += gen_head("Association Citation", wtype="main")
     #index += javascript_inject()
     index += gen_banner()
+    index += comment_inject()
     #index += test_button()
     index += yt_inject()
     #index += pdf_inject()
     index += create_link_table(get_section(140213544, xapi), xapi)
     index += download_table()
-    index += chat_inject()
-    index += calendar_inject()
     index += gen_tail()
 
     with open("index.html", "w") as index_out:
