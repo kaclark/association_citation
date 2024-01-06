@@ -100,13 +100,6 @@ def javascript_inject():
     return f'''
     {injection}
     '''
-def post_inject():
-    with open("./include/post_inject.js", "r") as js_in:
-        injection = [l.split("\n")[0] for l in js_in.readlines()]
-    injection = "\n".join(injection)
-    return f'''
-    {injection}
-    '''
 def comment_inject():
     with open("./include/comment_inject.html", "r") as js_in:
         injection = [l.split("\n")[0] for l in js_in.readlines()]
@@ -284,7 +277,6 @@ def gen_index():
     xapi = load_todoist()
     index = ""
     index += gen_head("Association Citation", wtype="main")
-    index += post_inject()
     #index += javascript_inject()
     index += gen_banner()
     index += comment_inject()
