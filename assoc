@@ -294,7 +294,7 @@ def gen_index():
     index += yt_inject()
     #index += pdf_inject()
     index += create_link_table(get_section(140213544, xapi), xapi)
-    index += f'''<div class='content' id='content'><"a class="twitter-timeline" href="https://twitter.com/nonmarkov_field?ref_src=twsrc%5Etfw">Tweets by nonmarkov_field</a></div> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'''
+    index += f'''<div class='content' id='content'><"a class="twitter-timeline" href="https://twitter.com/nonmarkov_field?ref_src=twsrc%5Etfw">Tweets by nonmarkov_field</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>'''
     index += download_table()
     index += gen_tail()
 
