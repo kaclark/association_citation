@@ -116,9 +116,7 @@ def inject_tweets():
         injection = [l.split("\n")[0] for l in tweet_in.readlines()]
     injection = "\n".join(injection)
     return f'''
-    <div class="content" id="content">
     {injection}
-    </div>
     '''
 
 
