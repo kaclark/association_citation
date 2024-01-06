@@ -275,7 +275,7 @@ def gen_index():
     index = ""
     index += gen_head("Association Citation", wtype="main")
     #index += javascript_inject()
-    index += gen_banner()
+    #index += gen_banner()
     index += comment_inject()
     #index += test_button()
     index += yt_inject()
