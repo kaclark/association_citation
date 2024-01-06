@@ -106,10 +106,7 @@ def comment_inject():
     injection = "\n".join(injection)
     return f'''
     <div class="content" id="content">
-    <button type="button" class="collapsible">Posts</button>
-        <div class="post_content">
-            {injection}
-        </div>
+    {injection}
     </div>
     '''
 
