@@ -149,6 +149,13 @@ p code {
     width: 70%;
 }
 
+.twitter-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
 .iframe {
     width: 100%;
     height: 125%
