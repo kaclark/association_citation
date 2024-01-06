@@ -13,10 +13,9 @@ Subproject for tools that load video shorts<br>
 Major Goals: <br>
 [ ] (Stage 4) Concept and Author Wikis for each pdf<br>
 [ ] (Stage 3) Concept Deck[Trading Cards?]<br>
-[ ] (Stage 3) Add YouTube Podcast link<br>
-[ ] (Stage 3) Table of Bookmarked Entries with IBSNs<br>
-[ ] (Stage 3) User Profiles<br>
-[ ] (Stage 3) Timeline-Home Page<br>
+[x] (Stage 3) Add YouTube Podcast link<br>
+[x] (Stage 3) User Profiles<br>
+[x] (Stage 3) Timeline-Home Page<br>
 [x] (Stage 3) Livestream Page for each pdf<br>
 [x] (Stage 2) Text Extraction and Highlight Page for each pdf<br>
 [x] (Stage 1) Download Hub for pdfs<br>
@@ -24,9 +23,13 @@ Major Goals: <br>
 [x] Display all livescan pages in large table<br>
 
 TODO: <br>
+[ ] pull RSS feed, filter for highlight comments, save to db and post<br>
+[ ] Add navbar<br>
+[ ] How to do local page-rank?<br>
 [ ] (#) Reach out to select alpha testers<br>
 [ ] (#) Twitter Mimic from database<br>
 [ ] (#) Use headerless selenium webscraping to extract tweet information and store in database<br>
+[ ] (#) Text Page for user<br>
 [x] [Primer(#)] Set up User Account<br>
 [ ] (*) Lilvid All Page(button a href) <br>
 [ ] (*) Lilvid Refresh Page(button a href)[.txt record]<br>
@@ -36,6 +39,7 @@ TODO: <br>
 [ ] Embed webarchive downloads in table href<br>
 [ ] (autocomment) condition for word stitching (remove spaces with newline replacment if next entry is letter and not space) <br> 
 [ ] concept splice convention('binding motifs') <br>
+[x] (Stage 3) Embedded PDFS
 [ ] html autogen for concept <br>
 [ ] Proposition Parser <br>
 [ ] Concept script with options <br>
