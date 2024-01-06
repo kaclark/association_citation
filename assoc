@@ -39,6 +39,7 @@ def gen_banner():
 	<img class='teaser-img' src='include/img/pixel_book.jpg'></img>
 	</div>
 	<h2>Stage 4: Comment Frenzy<h2>
+    <a href="./tweet_gallery.html">Twitter Gallery</a>
     </div>
     '''
 
@@ -109,6 +110,18 @@ def comment_inject():
     {injection}
     </div>
     '''
+
+def inject_tweets():
+    with open("./include/embedded_tweets.html", "r") as tweet_in:
+        injection = [l.split("\n")[0] for l in tweet_in.readlines()]
+    injection = "\n".join(injection)
+    return f'''
+    <div class="content" id="content">
+    {injection}
+    </div>
+    '''
+
+
 
 def test_button():
     return f'''
@@ -287,7 +300,17 @@ def gen_index():
     with open("index.html", "w") as index_out:
         index_out.write(index)
 
+def gen_twitter_gallery():
+    html_payload = ""
+    html_payload += gen_head("Twitter Gallery", wtype="main")
+    html_payload += inject_tweets()
+    html_payload += gen_tail()
+
+    with open("twitter_gallery.html", "w") as html_out:
+        html_out.write(html_payload)
+
 def refresh():
+    gen_twitter_gallery()
     gen_index()
 
 def load_todoist():
