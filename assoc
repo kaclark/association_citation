@@ -38,7 +38,7 @@ def gen_banner():
 	<div class='teaser-box'>
 	<img class='teaser-img' src='include/img/pixel_book.jpg'></img>
 	</div>
-	<h2>Stage 3: Dynamic ScanHub<h2>
+	<h2>Stage 4: Comment Frenzy<h2>
     </div>
     '''
 
@@ -275,7 +275,7 @@ def gen_index():
     index = ""
     index += gen_head("Association Citation", wtype="main")
     #index += javascript_inject()
-    #index += gen_banner()
+    index += gen_banner()
     index += comment_inject()
     #index += test_button()
     index += yt_inject()
