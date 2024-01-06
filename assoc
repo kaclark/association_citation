@@ -112,11 +112,11 @@ def comment_inject():
         injection = [l.split("\n")[0] for l in js_in.readlines()]
     injection = "\n".join(injection)
     return f'''
+    <div class="content" id="content">
     <button type="button" class="collapsible">Posts</button>
-    <div class="content" id="content">'
-    <div class="post_content">
-    {injection}
-    </div>
+        <div class="post_content">
+            {injection}
+        </div>
     </div>
     '''
 
