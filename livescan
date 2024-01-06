@@ -72,6 +72,17 @@ def gen_tail():
     </html>
     '''
 
+
+def comment_inject():
+    with open("./include/comment_inject.html", "r") as html_inject:
+        injection = [l.split("\n")[0] for l in html_inject.readlines()]
+    injection = "".join(injection)
+    return f'''
+    <div class="content" id="content">
+    {injection}
+    </div>
+    '''
+
 ##########################
 #INFORMATION SETUP
 ##########################
@@ -98,6 +109,7 @@ html_payload += gen_head(x_title)
 html_payload += gen_header(x_title, ref_info)
 for x_comment in x_comments:
     html_payload += gen_p(x_comment)
+html_payload += comment_inject()
 html_payload += gen_tail()
 
 with open("livescans/" + x_title + ".html", "w") as html_out:
