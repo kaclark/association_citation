@@ -105,7 +105,9 @@ def comment_inject():
         injection = [l.split("\n")[0] for l in js_in.readlines()]
     injection = "\n".join(injection)
     return f'''
+    <div class="content" id="content">'
     {injection}
+    </div>
     '''
 
 def test_button():
