@@ -309,6 +309,7 @@ def gen_index():
 def gen_twitter_gallery():
     html_payload = ""
     html_payload += gen_head("Twitter Gallery", wtype="main")
+    html_payload += comment_inject()
     html_payload += inject_tweets()
     html_payload += gen_tail()
 
