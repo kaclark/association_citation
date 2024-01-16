@@ -124,6 +124,15 @@ def inject_tweets():
     {injection}
     </div>
     '''
+def inject_slides():
+    with open("./include/embedded_slides.html", "r") as slide_in:
+        injection = [l.split("\n")[0] for l in slide_in.readlines()]
+    injection = "\n".join(injection)
+    return f'''
+    <div class="content" id="content">
+    {injection}
+    </div>
+    '''
 
 
 
@@ -297,6 +306,7 @@ def gen_index():
     #index += test_button()
     #index += pdf_inject()
     index += create_link_table(get_section(140213544, xapi), xapi)
+    index += inject_slides()
     index += yt_inject()
     #index += download_table()
     #twitter feed
