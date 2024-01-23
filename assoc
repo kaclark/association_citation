@@ -38,12 +38,7 @@ def gen_banner():
 	<div class='teaser-box'>
 	<img class='teaser-img' src='include/img/pi_over_four.png'></img>
 	</div>
-	<h2>Stage 4: Comment Frenzy<h2>
-        <a href="./twitter_gallery.html">
-            <img class='twitter-logo' src='include/img/twitter_logo.jpg'></img>
-            Twitter Gallery
-        </a>
-    </div>
+    <h2>Stage 3: Dynamic ScanHub<h2>
     '''
 
 def gen_p(text):
@@ -327,7 +322,7 @@ def gen_twitter_gallery():
         html_out.write(html_payload)
 
 def refresh():
-    gen_twitter_gallery()
+    #gen_twitter_gallery()
     gen_index()
 
 def load_todoist():
@@ -363,12 +358,11 @@ def get_table_row(title_task, api):
     #c_date = title_task.created_at.split("T")[0]
     #x_year, x_month, x_day = c_date.split("-")
     #cc_date = x_month + "/" + x_day + "/" + x_year[2:]
-    cc_date = get_date_by_comment(title_task.id, api)
+    #cc_date = get_date_by_comment(title_task.id, api)
     clink = "livescans/" + content + ".html"
     p_content = format_title(content)
     return f'''<tr><td>
     <tr><td><a href={clink}>{p_content}</a></td>
-    <td>{cc_date}</td>
     </tr><tr></tr>
     '''
 def create_link_table(titles, api):
@@ -377,12 +371,12 @@ def create_link_table(titles, api):
     table_html += "<h1>Livescans</h1>"
     table_html += "<table class='livescans'>"
     #todo: sort by latest comment and supply that date
-    dated_titles = sorted([[t] + [int(y) for y in get_date_by_comment(t.id, api).split("/")] for t in titles], key=lambda x: (x[3], x[1], x[2]),reverse=True)
+    #dated_titles = sorted([[t] + [int(y) for y in get_date_by_comment(t.id, api).split("/")] for t in titles], key=lambda x: (x[3], x[1], x[2]),reverse=True)
     #titles_date_map = {t: get_date_by_comment(t.id, api).split("/") for t in titles}
     #dated_titles = sorted([get_date_by_comment(t.id, api).split("/") for t in titles], key=lambda x: (x[3], x[1], x[2]),reverse=True)
     #dated_titles = sorted([get_date_by_comment(t.id, api).split("/") for t in titles], key=lambda x: (x[3], x[1], x[2]),reverse=True)
-    s_titles = [l[0] for l in dated_titles]
-    for title in s_titles:
+    #s_titles = [l[0] for l in dated_titles]
+    for title in titles:
         table_html += get_table_row(title, api)
     table_html += "</table></div>"
     return table_html
@@ -392,7 +386,7 @@ def get_date_by_comment(t_id, api):
     x_dates = []
     for c in test_c:
         x_dates.append([int(w) for w in c.posted_at.split("T")[0].split("-")])
-    s_dates = sorted(x_dates, key=lambda x: (x[0], x[1], x[2]),reverse=True)
+    #s_dates = sorted(x_dates, key=lambda x: (x[0], x[1], x[2]),reverse=True)
     x_year, x_month, x_day = s_dates[0]
     cc_date = str(x_month) + "/" + str(x_day) + "/" + str(x_year)[2:]
     return cc_date
