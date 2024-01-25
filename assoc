@@ -301,7 +301,7 @@ def gen_index():
     #index += test_button()
     #index += pdf_inject()
     index += create_link_table(get_section(140213544, xapi), xapi)
-    index += inject_slides()
+    #index += inject_slides()
     index += yt_inject()
     #index += download_table()
     #twitter feed
