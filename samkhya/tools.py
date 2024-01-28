@@ -1,5 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+from sympy import Matrix
 
 def read_csv(fd):
     with open(fd, "r") as fn:
@@ -48,3 +49,20 @@ def graph_from_list_of_maps(list_of_maps, relation_types, root_relation):
     for xg in x_graphs:
         x_graph.update(xg)
     return x_graph
+
+def graph_from_matrix():
+    # Create a SymPy matrix
+    sympy_matrix = Matrix([[0, 1, 0], [1, 0, 1], [0, 1, 0]])
+
+    # Convert the SymPy matrix to a list of lists
+    matrix_as_list = sympy_matrix.tolist()
+
+    # Flatten the list of lists
+    edges = [(i, j) for i, row in enumerate(matrix_as_list) for j, value in enumerate(row) if value != 0]
+
+    # Create a NetworkX graph using the list of edges
+    G = nx.Graph(edges)
+    return G
+
+
+
