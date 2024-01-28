@@ -39,7 +39,7 @@ def graph_from_map(xi_map, relation_types, root_relations):
     return xi_graph       
 
 def save_graph(xi_graph, fd):
-    nx.draw(xi_graph, with_labels=True, font_weight='bold')
+    nx.draw(xi_graph, with_labels=True, node_color="#d2b48c")
     plt.savefig(fd)
 
 def graph_from_list_of_maps(list_of_maps, relation_types, root_relation):
