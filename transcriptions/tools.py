@@ -2,6 +2,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from sympy import Matrix
 
+
+#Samkyha transcription derived tools
 def read_csv(fd):
     with open(fd, "r") as fn:
         lines = [ll.split(",") for ll in [l.split('\n')[0] for l in fn.readlines()]]
@@ -39,8 +41,14 @@ def graph_from_map(xi_map, relation_types, root_relations):
         xi_graph.add_edge(xi_map[dom], xi_map[codom])
     return xi_graph       
 
-def save_graph(xi_graph, fd):
-    nx.draw(xi_graph, with_labels=True, node_color="#d2b48c")
+def save_graph(xi_graph, fd, edgelabels=False):
+    if edgelabels:
+        pos = nx.spring_layout(xi_graph)
+        edge_labels = dict([((n1, n2), f'{n3}') for n1, n2, n3 in xi_graph.edges(data=True)])
+        nx.draw(xi_graph, pos, with_labels=True, node_color="#d2b48c")
+        nx.draw_networkx_edge_labels(xi_graph, pos, edge_labels=edge_labels)
+    else:
+        nx.draw(xi_graph, with_labels=True, node_color="#d2b48c")
     plt.savefig(fd)
 
 def graph_from_list_of_maps(list_of_maps, relation_types, root_relation):
@@ -64,5 +72,27 @@ def graph_from_matrix():
     G = nx.Graph(edges)
     return G
 
+#Monadology Derived Tools
+def read_first_line(fdo):
+    return fdo.readlines()[0].split('\n')[0]
 
+def add_func_subgraph(dom, codom, f, xi_graph):
+    xi_graph.add_edge(dom, codom, function=f)
+    return xi_graph
 
+def add_func_subgraph_copied(dom, codom, f, xi_graph):
+    xj_graph = nx.Graph()
+    xj_graph.add_edge(dom, codom, function=f)
+   
+    #At this step, we should consider:
+    #what if this is inefficient?
+    #it seems functional though
+    xw_graph = nx.Graph()
+    xw_graph.update(xj_graph)
+    xw_graph.update(xi_graph)
+    return xw_graph
+
+def get_func_subgraph(dom, codom, f):
+    xj_graph = nx.Graph()
+    xj_graph.add_edge(dom, codom, function=f)
+    return xj_graph 
