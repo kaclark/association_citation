@@ -11,3 +11,11 @@ x_tattvas = read_map_list("data/tattvas.csv")
 #save_graph(test2, "data/test2_diag.png")
 test3 = graph_from_list_of_maps(x_tattvas, [("category","term_name")], [("tattvas", "category")])
 save_graph(test3, "data/test3_diag.png")
+
+#for the sake of time, pseudocode
+#recordPage as pg49
+#thereExists purusa
+#thereExists mulaprakrti
+#purusa isNot ConditionedUpon mulaprakrti
+#mulaprakrti isNot ConditionedUpon purusa
+#endPage
