@@ -7,13 +7,12 @@ import argparse
 parser = argparse.ArgumentParser(
                     prog='todo',
                     description='todoist cli',
-                    epilog='documentation: https://developer.todoist.com/rest/v2/?python#overview')
+                    epilog='Further API Documentation: https://developer.todoist.com/rest/v2/?python#overview')
 
 parser.add_argument('-t', '--taskid')
 parser.add_argument('-a', '--action')  
 
 args = parser.parse_args()
-print(args.taskid, args.action)
 
 def comments_from_task_id(t_id):
     try:
@@ -23,7 +22,13 @@ def comments_from_task_id(t_id):
         print(error)
 
 #access api token
-#with open("api.token", "r") as key_in:
-#    api = TodoistAPI(str(key_in.readlines()[0].split("\n")[0]))
+with open("api.token", "r") as key_in:
+    api = TodoistAPI(str(key_in.readlines()[0].split("\n")[0]))
 
-#print(comments_from_task_id(sys.argv[1]))
+if args.action == "getComments":
+    t_comments = comments_from_task_id(args.taskid)
+    logval = str(args.action) + ":" + str(args.taskid) + " --> Array"
+    print(t_comments, "\n", logval)
+
+
+
