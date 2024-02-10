@@ -31,4 +31,9 @@ if args.action == "getComments":
     print(t_comments, "\n", logval)
 
 
+######################
+###EXAMPLES
+#####################
+#Spandakarika
+#python todo.py --taskid 7456224352 --action getComments
 
