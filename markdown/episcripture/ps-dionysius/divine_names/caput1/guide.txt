@@ -1,0 +1,1 @@
+./display.sh section1.md notes/section1.md 
