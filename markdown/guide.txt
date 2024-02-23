@@ -2,3 +2,5 @@ Greek Character Set
 https://www.w3schools.com/charsets/ref_utf_greek.asp
 Math Character Set 
 https://www.toptal.com/designers/htmlarrows/math/
+Super and Sub Scripts
+https://www.htmlsymbols.xyz/miscellaneous-symbols/subscript-and-superscript/subscript-letters
