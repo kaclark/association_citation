@@ -1,1 +1,2 @@
 ./display.sh section1.md notes/section1.md 
+pandoc full_caput1.md -o full_caput.txt --columns=40
