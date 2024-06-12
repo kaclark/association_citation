@@ -38,7 +38,10 @@ ignore_set = [
     ' Reposts',
     ' Likes',
     ' Bookmarks',
-    'Translate post'
+    'Translate post',
+    'Welcome to x.com!',
+    'For more details, see our Privacy Policy: https://x.com/en/privacy',
+    'We are letting you know that we are changing our URL, but your privacy and data protection settings remain the same.'
 ]
 message_glued2 = tweet_info.replace("\n\n", "@@@")
 message_glued = message_glued2.replace("]\n", "]@@@")
@@ -107,8 +110,10 @@ def print_tweet(i_map):
     tweet_str += "\tRetweets: " + i_map['reposts'] + " Likes: " + i_map['likes'] + " Bookmarks: " + i_map['bookmarks'] + "\n"
     date_split = i_map['post_date'].split("·")
     date_reformat = date_split[0].replace(" ", "_").replace(":","_") + date_split[-1].lstrip().replace(" ", "_").replace(",", "") 
+    
     with open("tw_dumps/" + date_reformat + ".txt", "w") as tw_dump:
-        tw_dump.write("\t" + i_map['post_text'] + "\n")
+        tw_dump.write("\t" + tweet_str + "\n")
+
     print(tweet_str)
     
 
