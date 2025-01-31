@@ -3,61 +3,65 @@
 Main Site(Github.io): <br> 
 https://kaclark.github.io/association_citation/<br>
 
-Generative Website code and tools for digital textual practices.<br>
-Subset of code works on Fedora Terminal<br>
-Subset of code works on Termux<br>
-Headerless Webscraping works on Termux<br>
-Browser automation on Terminal<br>
-Subproject for tools that load video shorts<br>
+### Updates
 
-Major Goals: <br>
-[ ] (Stage 4) Concept and Author Wikis for each pdf<br>
-[ ] (Stage 3) Concept Deck[Trading Cards?]<br>
-[x] (Stage 3) Add YouTube Podcast link<br>
-[x] (Stage 3) User Profiles<br>
-[x] (Stage 3) Timeline-Home Page<br>
-[x] (Stage 3) Livestream Page for each pdf<br>
-[x] (Stage 2) Text Extraction and Highlight Page for each pdf<br>
-[x] (Stage 1) Download Hub for pdfs<br>
-[x] Integrate with todoist entries for text summary page auto-generation<br>
-[x] Display all livescan pages in large table<br>
+This website was one idea long ago; it is undergoing rapid reconstruction!
 
-TODO: <br>
-[ ] pull RSS feed, filter for highlight comments, save to db and post<br>
-[ ] Add navbar<br>
-[ ] How to do local page-rank?<br>
-[ ] (#) Reach out to select alpha testers<br>
-[ ] (#) Twitter Mimic from database<br>
-[ ] (#) Use headerless selenium webscraping to extract tweet information and store in database<br>
-[ ] (#) Text Page for user<br>
-[x] [Primer(#)] Set up User Account<br>
-[ ] (*) Lilvid All Page(button a href) <br>
-[ ] (*) Lilvid Refresh Page(button a href)[.txt record]<br>
-[x] (*) Lilvid Page Insta Embed html injection<br>
-[x] [Primer(*)] Lilvid Page YouTube Embed html injection<br>
-[ ] (redudancy control) keep track of comments associated with existing livescan pages and only update upon change <br>
-[ ] Embed webarchive downloads in table href<br>
-[ ] (autocomment) condition for word stitching (remove spaces with newline replacment if next entry is letter and not space) <br> 
-[ ] concept splice convention('binding motifs') <br>
-[x] (Stage 3) Embedded PDFS
-[ ] html autogen for concept <br>
-[ ] Proposition Parser <br>
-[ ] Concept script with options <br>
-[ ] Add Image Capture for livescans<br>
-[ ] Selenium post images on Twitter<br>
-[x] Concept DataStructure <br>
-[x] Propositional Summaries for recall (Samkhya |-- Vedanta |-- Shavism)  <br>
-[x] Concept data collection <br>
+For now, it is a guide to using the internet in my style.
 
-[ ] Index and Citation list for each pdf <br>
-[x] Networkx testing <br>
-[ ] Networkx autographs<br>
-[ ] Create Util file <br>
-[ ] Add Manual Section for tools <br>
-[ ] Comment Code Clearly <br>
-[ ] Send Todoist notification <br>
-[ ] Audio Player Testing for Stanzas on Vibration <br>
-[ ] Restructure files (legacy folder) <br>
-[ ] Move download files to Web Archive <br> 
-[ ] (Narrativity) log and display reading notes<br>
-[ ] (Style) Make download button in livescan table<br> 
+If there's anything that I have taken a liking to it is style transfer, to breaking loose of the tempo of one song in order to jump out at the color another horizon promises...Computer Literacy and Mathematical Wonder will come to be one in time...
+
+For the longest time I liked to read on my phone and I thought it was fun that a computer was in my pocket and that it could also be a library. I got a bit carried away with screenshotting over the years...but I would hate to lug around all those those images. I wanted the most consise way of storing the information I liked along the way, and that led to what this website wanted to be. But before it can be a place for experience it must put into play a method of gaining experience. 
+
+For years I have grown more and more attached to the terminal interface associated with unix. However, those who created unix went on to make a graphical user interface embedded into the operating system itself. Unix was created as a programming environment. It was always already a refuge from the worst and grossest machinations of computers. Today we flee further from the operating system, but it could not be a better ally in our desire to expand our memory and our surface for the reception of beautiful movements of affect, passion, and spirit. 
+
+### Suckless
+
+To begin with let us replace the browser with something that sucks less. 
+
+If you find yourself on linux, first let it be known that this breaks on gnome and that I had to find my way to xfce before it interface would even load properly
+
+```
+sudo dnf install surf #fedora 
+sudo apt install surf #debian, ubuntu
+```
+
+If you do not want to use the package manager, you can try building from source
+
+Maybe try (but be ready to debug)
+```bash
+git clone https://git.suckless.org/surf
+cd surf
+make clean install
+```
+See more here: https://git.suckless.org/surf/file/README.html
+
+For a long time I used lynx, w3m, and a little bit of links. For a few days I plotted a life of only hget uri | htmlfmt in plan9, but netsurf there led me to surf here. Normal web things I would do from my phone browser can be done with surf. Replacing this is my first major computer goal of the season. 
+
+```bash
+surf https://bsky.app #login once then this works without signin!
+surf https://kaclark.github.io/association_citation/
+```
+
+Association Citation will be revamped to work very well with surf.
+Heads up, ctrl+shift+j/k to resize the zoom!
+
+Okay so a few things I notice when I open up association citation
+1. White and Bright!
+2. Video Works!
+3. PDFs do not work
+4. The text in Spandakarika is much too large
+5. The commentary and highlight text in the Leibniz page is perfect
+
+So we can make this podcast forward, without a doubt. Video embedding will work well.
+For video storage and server hosting, unlisted youtube videos embedded in the website html seem like the most straightforward option. Videos are just too large and if I am posting something on the internet like this I guess it can live on a Google Server without me getting the shivers...
+
+I think I will tone the background color down. Maybe make a dark mode and have a button somewhere for switching between light and dark mode?
+
+Now the next thing to rejoice over after the suckless surf browser is the typesetting that existed before tex and latex. Algorithms, partially ordered sets, and clean homework are all great, but at AT&T troff was all the rage. Why do we have PDFs? Because the printers traded off with the CPUs; workload moved over to the PC and we got those documents. I wish to provide documents in the smallest footprint possible over radio waves. I never intend to print this text. PDFs are overkill. Manuscripts in the .ms format can be converted to pdf, html, and terminal output with ease with plan9 tools. My output will be very slow for some time as I work on setting up a system for cranking out manuscripts, but I assure the reader that a veritable printing press is on its way...
+
+When one reads the documentation of bsky, it becomes clear that a filesystem system would fare well, and where else do we find the best example of this but plan9 and its manifold derivatives? Go Glenda Go...
+
+What does .com mean? It was first .commerical in some sense. It was only after the onslaughts of speculation then died down that .com relaxed and anyone could get one. I was born after the wreckage to laid waste to the dreams of yesterday, so I never got this impression. Oh how shocking to gain the distance of age and to reckon higher recognition of the past tragedies which have inscribed the common details of my daily life in their boring manifestation.
+
+Java, a language I learned first above all beyond CSS, html, and LabVIEW, was the accursed murderer of that wonderous demiurge InfernoOS after Plan9. Inferno brought us portable code, always in limbo: written once and ran everywhere...my first command line interface memories are compiling what? Java...before I learned python did I not also slip in some JavaScript? The crime redoulbed...in my web browsing days in those unix terminal haunts I did everything to evade this scourge JavaScript...and now with surf we find a way to approach it without the bloat which has become common purchase today. The git repo listed above is a study in excellence. It humbles me and I shall build my website to be held through its gaze!  
