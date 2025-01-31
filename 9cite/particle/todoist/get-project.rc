@@ -1,0 +1,2 @@
+PROJECT_ID=$1 
+curl 'https://api.todoist.com/rest/v2/projects/'^$PROJECT_ID -H 'Authorization: Bearer '^$TODOIST_KEY

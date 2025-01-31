@@ -1,0 +1,5 @@
+TASK_ID=$1
+CONTENT=$2
+DATA_RAW='{"task_id": "'^$TASK_ID^'", "content": "'^$CONTENT^'"}'
+#curl -s 'https://api.todoist.com/rest/v2/comments' -X POST --data $DATA_RAW -H 'Content-Type: application/json' -H 'X-Request-Id: '^$(uuidgen) -H 'Authorization: Bearer '^$TODOIST_KEY 
+curl -s 'https://api.todoist.com/rest/v2/comments' -X POST --data $DATA_RAW -H 'Content-Type: application/json' -H 'X-Request-Id: '^$(uuidgen) -H 'Authorization: Bearer '^$TODOIST_KEY | jq -r '.id + " added"'

@@ -1,0 +1,2 @@
+TASK_ID=$1
+curl -X POST 'https://api.todoist.com/rest/v2/tasks/'^$TASK_ID^'/close' -H 'Authorization: Bearer '^$TODOIST_KEY

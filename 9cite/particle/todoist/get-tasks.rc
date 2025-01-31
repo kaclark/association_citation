@@ -1,0 +1,1 @@
+curl -s -X GET https://api.todoist.com/rest/v2/tasks  -H 'Authorization: Bearer '^$TODOIST_KEY | jq -r '.[] | select(.is_completed == false) | .id  + " <- " + .parent_id + " " + .content' | sort | gum filter

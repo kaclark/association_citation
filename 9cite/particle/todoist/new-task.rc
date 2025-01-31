@@ -1,0 +1,4 @@
+PROJECT_ID=$1
+CONTENT=$2
+RAW_DATA='{"content": "'^$CONTENT^'", "project_id": "'^$PROJECT_ID^'"}'
+curl 'https://api.todoist.com/rest/v2/tasks' -X POST --data $RAW_DATA -H 'Content-Type: application/json' -H 'X-Request-Id: '^$(uuidgen) -H 'Authorization: Bearer '^$TODOIST_KEY

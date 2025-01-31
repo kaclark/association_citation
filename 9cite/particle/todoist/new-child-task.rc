@@ -1,0 +1,5 @@
+PROJECT_ID=$1 
+PARENT_ID=$2
+CONTENT=$3
+RAW_DATA='{"content": "'^$CONTENT^'", "project_id": "'^$PROJECT_ID^'", "parent_id":"'^$PARENT_ID^'"}'
+curl 'https://api.todoist.com/rest/v2/tasks' -X POST --data $RAW_DATA -H 'Content-Type: application/json' -H 'X-Request-Id: '^$(uuidgen) -H 'Authorization: Bearer '^$TODOIST_KEY

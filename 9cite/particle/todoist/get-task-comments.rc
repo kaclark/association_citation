@@ -1,0 +1,2 @@
+TASK_ID=$1
+curl -s 'https://api.todoist.com/rest/v2/comments?task_id='^$TASK_ID -H 'Authorization: Bearer '^$TODOIST_KEY | jq -r '.[] | .id + " " + .posted_at + "\n" + .content + "\n"' | glow -w `{expr `{tput cols} - 4} -

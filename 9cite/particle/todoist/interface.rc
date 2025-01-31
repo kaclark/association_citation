@@ -1,0 +1,21 @@
+PROJECT_ID=$1
+TASK=`{rc get-project-tasks.rc $PROJECT_ID} 
+TASK_ID=`{echo $TASK | awk '{print $1}'}
+printf $TASK_ID
+
+ACTION=`{gum choose 'complete' 'comment' 'delete' 'see-comments' 'do-nothing'}
+
+switch($ACTION){
+	case 'complete'
+		rc complete-task.rc $TASK_ID 
+	case 'see-comments'
+		rc get-task-comments.rc $TASK_ID 
+	case 'comment'
+		RESPONSE=`{gum input --placeholder 'check again in the morning'}
+		rc new-task-comment.rc $TASK_ID $"RESPONSE 
+	case 'delete'
+		CHECK=`{gum confirm 'Delete '^$TASK_ID^'?' && rc delete-task.rc $TASK_ID}
+	case 'do-nothing'
+		echo $ACTION		
+		
+}

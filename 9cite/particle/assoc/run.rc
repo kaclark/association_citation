@@ -1,0 +1,3 @@
+#assert echo `{pwd} == $PREFIX/association_citation/9cite/particle 
+cd todoist
+rc interface.rc `{jq -r '.assoc' .ids.json}
