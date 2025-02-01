@@ -1,0 +1,56 @@
+#!/usr/bin/python3
+
+import sys
+from wiktionaryparser import WiktionaryParser
+parser = WiktionaryParser()
+
+parser.set_default_language('french')
+parser.include_relation('alternative forms')
+parser.include_relation("synonyms")
+parser.include_relation("antonyms")
+parser.include_relation("hypernyms")
+parser.include_relation("hyponyms")
+parser.include_relation("meronyms")
+parser.include_relation("holonyms")
+parser.include_relation("troponyms")
+parser.include_relation("related terms")
+parser.include_relation("coordinate terms")
+
+s_word = sys.argv[1]
+word_info = parser.fetch(s_word, 'french')
+#The word info is given as a map
+for k,v in word_info[0].items():
+    #definitions is the only data structure returned
+    if k == 'definitions':
+        #for each element in the list of defitions
+        for vx in v:
+            #there is a dictionary
+            for ky, vy in vx.items():
+                #a few entires are single words
+                if not isinstance(vy, list):
+                    print(ky, ":", vy, "\n")
+                #each of these dictionaries holds a list
+                #if this list is empty we skip
+                if vy != [] and isinstance(vy, list):
+                    print(ky)
+                    for vw in vy:
+                        if isinstance(vw, str):
+                            print("\t" + vw)
+                        elif isinstance(vw, dict):
+                            for kq, vq in vw.items():
+                                print(kq, vq)
+                        elif isinstance(vw, list):
+                            print(" ".join(vw))
+    elif k == "etymology":
+        v2 = v.replace(";", "\n")
+        v3 = v2.replace(".", "\n")
+        v4 = v3.replace(":", "\n")
+        v5 = v4.replace("),", "),\n")
+        print(s_word, k.upper(), v5)
+    elif k == "pronunciations":
+        print(k.upper())
+        for kq,vq in v.items():
+            if vq != []:
+                for vqq in vq:
+                    print(vqq)
+

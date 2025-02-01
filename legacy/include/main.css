@@ -1,0 +1,175 @@
+body {
+    font-family: 'Verdana', serif;
+    font-weight: 400;
+    /*background-color: #fff;*/
+    background-color: #c3a5e2;
+    font-size: 1.5em;
+    line-height: 1.8;
+}
+
+
+.content {
+    width: 800px;
+    padding: 25px 50px;
+    margin: 25px auto;
+    /*background-color: white;*/
+    border-radius: 15px;
+}
+
+.contentblock {
+    width: 950px;
+    margin: 0 auto;
+    padding: 0;
+    border-spacing: 25px 0;
+}
+
+.contentblock td {
+    /*background-color: #fff;*/
+    padding: 25px 50px;
+    vertical-align: top;
+    border-radius: 15px;
+}
+
+.teaser_box {
+    margin: 0 auto;
+    height: 200px;
+}
+
+a,
+a:visited {
+    color: #224b8d;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
+h4 {
+    font-size: 20px;
+    text-align: left;
+}
+h5 {
+    font-size: 10px;
+color:darkslategrey;
+text-align: center;
+}
+#sytb {
+border-collapse: collapse;
+width: 100%;
+align: center;
+}
+
+#sytb td, #sytb th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+#sytb tr:nth-child(even){background-color: #f2f2f2;}
+
+#sytb tr:hover {background-color: #ddd;}
+
+#sytb th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #4CAF50;
+color: white;
+}
+
+code {
+    display: block;
+    padding: 10px;
+    margin: 10px 10px;
+}
+
+p {
+    line-height: 32px;
+    text-align: left;
+    font-size: 24px;
+}
+
+p code {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+.maintable {
+	font-size: 14px;
+}
+
+.livescans {
+	font-size: 24px;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+#results img {
+    width: 133px;
+}
+
+#seeintodark {
+    margin: 0 auto;
+}
+
+#sift {
+    margin: 0 auto;
+}
+
+#sift img {
+    width: 50px;
+}
+
+.downloadpaper {
+    padding-left: 20px;
+    float: right;
+    text-align: center;
+}
+
+.downloadpaper a {
+    font-weight: bold;
+    text-align: center;
+}
+
+.teaser-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.twitter-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.iframe {
+    width: 100%;
+    height: 125%
+}
+a:link{
+    text-decoration: none;
+    color: black;
+}
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color: purple;
+}

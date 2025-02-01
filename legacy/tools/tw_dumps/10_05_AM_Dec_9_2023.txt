@@ -1,0 +1,8 @@
+	Samkhya |-- Advaita Vedanta |-- Trika Shaivism with Abhinavagupta
+	Tibetan Buddhism | Samkhya, "Tantra"
+	Abhinavagupta ~= "Tantra"[Siva]
+	assert Stanzas on Vibration => Abhinavagupta
+	import Eliade [Samkhya]
+	import Larsons[Samkhya]
+	assert Samkhya => Mahayana Buddhism
+	?-Dignaga

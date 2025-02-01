@@ -1,0 +1,165 @@
+#!/usr/bin/python3
+
+from todoist_api_python.api import TodoistAPI
+from todoist_api_python.models import Attachment, Comment, Task
+from simple_term_menu import TerminalMenu
+
+import subprocess
+
+import requests
+
+from bs4 import BeautifulSoup
+
+def intscrape(int_url):
+    page = requests.get(int_url)
+    soup = BeautifulSoup(page.content, "html.parser")
+    for ip in soup.find_all('p'):
+        print(ip.get_text())
+
+def termux_redirect(int_url):
+    subprocess.run(["sh", "-c", "google-chrome " + int_url])
+
+with open("api.token", "r") as key_in:
+    api = TodoistAPI(str(key_in.readlines()[0].split("\n")[0]))
+def get_comment_json_by_id(p_id):
+    try:
+        comments = api.get_comments(project_id=p_id)
+        return comments
+    except Exception as error:
+        print(error)
+
+def refresh():
+    clear_screen = subprocess.run(["sh", "-c", "clear"])
+
+def push_comment(comment_text, p_id, attach):
+    #send comment to api
+    try:
+        comment = api.add_comment(content=comment_text, project_id=p_id, attachment=attach)
+    except Exception as error:
+        print(error)
+
+def get_tasks(project_id, section_id):
+    try:
+        tasks = api.get_tasks()
+        for task in tasks:
+            if task.project_id == project_id and task.section_id == section_id:
+                print(task)
+    except Exception as error:
+        print(error)
+
+def get_task(t_id):
+    try:
+        return api.get_task(task_id=t_id)
+    except Exception as error:
+        print(error)
+
+def get_fibre_hash(pj_id, sc_id):
+    filtered_tasks = filter_tasks(pj_id, sc_id, top_guage=False) 
+    child_hash = {}
+    for x_task in filtered_tasks:
+        x_task_id = int(x_task.id)
+        x_task_parent_id = x_task.parent_id
+        if x_task_parent_id == None:
+            continue
+        if int(x_task_parent_id) not in child_hash:
+            child_hash[int(x_task_parent_id)] = [x_task_id]
+        else:
+            child_hash[int(x_task_parent_id)].append(x_task_id)
+    return child_hash
+
+def get_task_fibres(task_obj, fibre_hash):
+    task_fibres = []
+    try:
+        for x_fibre in fibre_hash[int(task_obj.id)]:
+            v_fibre = get_task(x_fibre)
+            if v_fibre.is_completed != True:
+                task_fibres.append(v_fibre)
+    except KeyError:
+        pass
+    return task_fibres
+
+def filter_tasks(pj_id, sc_id, top_guage):
+    r_tasks = []
+    try:
+        tasks = api.get_tasks()
+        for task in tasks:
+            if top_guage:
+                if int(task.project_id) == pj_id and int(task.section_id) == sc_id and task.parent_id==None:
+                    r_tasks.append(task)
+            else:
+                if int(task.project_id) == pj_id and int(task.section_id) == sc_id:
+                    r_tasks.append(task)
+    except Exception as error:
+        print(error)
+    return r_tasks
+
+def mark_prepared(task_obj):
+    try:
+        comment = api.add_comment(
+            content="Integrated",
+            task_id=task_obj.id,
+        )
+        #print(comment)
+    except Exception as error:
+        print(error)
+
+def scrape_int(task_obj):
+    link = task_obj.description.split('(')[-1].split(')')[0]
+    termux_redirect(link)
+
+def add_comment(task_obj):
+    try:
+        n_comment = input("New Comment:\n>>")
+        api.add_comment(task_id=task_obj.id, content=n_comment)
+    except Exception as error:
+        print(error)
+
+def interaction_moment(func_param_pair):
+    func, params = func_param_pair
+    func(params)
+
+def int_choice_boson(task_obj):
+    s_id = 140736698
+    p_id = 2323493851
+    fibre_hash = get_fibre_hash(p_id, s_id)
+    fibres = get_task_fibres(task_obj, fibre_hash)
+
+    #TODO: Add Choice for going back
+    #TODO: Add Choice for going exiting
+    #TODO: Ensure that cycle tasks are not completed tout court
+    #TODO: Remove View/Fork to Google Drive, termux-open choose call?
+    #TODO: Add See Comments
+    if len(fibres) > 0:
+        choices = ["Subprocesses", "Integrate", "View", "Comment"] 
+    else:
+        choices = ["Integrate", "View", "Comment"] 
+
+    forward_parameters = {
+
+            "Subprocesses": (browse_tasks, fibres), 
+            "Integrate": (mark_prepared, task_obj), 
+            "View": (scrape_int, task_obj),
+            "Comment": (add_comment, task_obj)
+
+    }
+
+    set_menu(choices, forward_parameters, interaction_moment)
+
+def browse_tasks(task_bundle):
+    set_menu([str(x.content) for x in task_bundle], {x.content:x for x in task_bundle}, int_choice_boson)
+
+def set_menu(opt, opt_hash, menu_act):
+    terminal_menu = TerminalMenu(opt)
+    menu_entry_index = terminal_menu.show()
+    menu_act(opt_hash[opt[menu_entry_index]])
+
+def integration_hub(p_id, s_id):
+    x_tasks = filter_tasks(p_id, s_id, top_guage=True)
+    browse_tasks(x_tasks)
+
+def main_loop():
+    s_id = 140736698
+    p_id = 2323493851
+    integration_hub(p_id, s_id)
+
+main_loop()

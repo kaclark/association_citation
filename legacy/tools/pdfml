@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+import sys
+import subprocess
+
+def pdf_from_url_to_html(pageout, URL):
+    #TODO: Write up documentation crawl on why User Agent and Why Magic Browser. What else could work?
+    req = urllib.request.Request(URL, headers={'User-Agent' : "Magic Browser"})
+    remote_file = urllib.request.urlopen(req).read()
+    remote_file_bytes = io.BytesIO(remote_file)
+    pdfdoc = PyPDF2.PdfReader(remote_file_bytes)
+    #to make an .html we will create a large string and dump it into a file
+    output_html = ""
+    #the header that handles the file initlization is added to the flowing string 
+    output_html += gen_head(strip_underscores(pageout), wtype="readable")
+    #we start the body before appending text data
+    output_html += "<div class='content' id='content'>"
+    #iterate through each page
+    #some pdfs are books which have footers and headers. These are attempted
+    #for capture via page data enacting a partition = (P1, P2)
+    for i in range(len(pdfdoc.pages)):
+        page_data = remove_newlines(pdfdoc.pages[i].extract_text())
+        
+        #first line
+        output_html += gen_pagenum(str(page_data[0]))
+        # ===(P1)===
+        #middle(all lines but 2)
+        output_html += gen_readp(str(page_data[1]))
+        # ===(P2)===
+        #last line
+        output_html += gen_pagenum(str(page_data[2]))
+    
+    #end the div
+    output_html += "</div>"
+    #wrap up the document
+    output_html += gen_tail()
+    
+    #write stream to .html
+    with open("readable/" + pageout + ".html", "w") as html_out:
+        html_out.write(output_html)
+
+def gen_readable(pageout, source):
+    
+    print("pageout", pageout)
+    print("source", source)
+
+    
+    #we want to either be able to load a pdf or one from a link
+    def remove_newlines(raw_text):
+        split_lines = raw_text.split("\n")
+        return (split_lines[0]," ".join(split_lines[1:-1]), split_lines[-1])
+    
+    def remove_spaces(raw_text):
+        split_lines = "_".join(raw_text.split(" "))
+        return split_lines
+   
+    def extract_folder(pdfsource):
+        return "/".join(pdfsource.split("/")[:-1]) + "/"
+
+    filtered_pageout = remove_spaces(pageout)
+    #if we have a url we arrange the data as follows
+    if "www" in source:
+        pdf_from_url_to_html(filtered_pageout, source)
+    else:
+        local_pdf = subprocess.run(["sh", "-c", "pdftohtml " + source, filtered_pageout + ".html"])
+
+def exhaustion(null):
+    print("unhandled error: invoke pdfml again\npdfml -h for usage info")
+
+def help_scan(p1, p2, callback):
+    #*args: arguments to feed to callback if help message is false-positive
+    #callback: function that determines which state transition in the action sequence is appropriate upon help false-positive
+    #Ask if help is wanted
+    help_test = input("Do you mean to ask for help? (Y/N)\n")
+    #if so, explain
+    gap = "       "
+    if help_test == "Y":
+        print(f"\n  usage: pdfml pagename pdfsource\n{gap}pagename:  output pagename.html\n{gap}pdfsource: link or pdf file to convert to markup\n")
+        print("  ex: pdfml Enneads.pdf Enneads.html\n")
+        print("  pdf files should be left in their own folder\n")
+    #if not, backtrack and carry on
+    elif help_test == "N":
+        callback(p1, p2)
+
+def invocation(p1, p2):
+    #file ugage pdfml pagename pdfsource (=>) invocation(pagename, pdfsource) > pagename.html
+    #p1: first input field from script invocation: pagename
+    #p2: second input field from script invocation: pdfsource, link or .pdf 
+    if "h" in p1 and "-" in p1:
+        help_scan(p1, p2, gen_readable)
+    else:
+        gen_readable(p1, p2)
+
+try:
+    param1 = sys.argv[1] 
+    param2 = sys.argv[2]
+    invocation(param1, param2)
+except IndexError as error:
+    help_scan(None, None, exhaustion)
