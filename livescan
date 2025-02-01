@@ -57,11 +57,13 @@ def gen_header(title, ref_info):
 	<!--<a href="../index.html"><img class='teaser-img' src='../include/img/pi_over_four.png'></img></a>-->
 	<a href="../index.html">[Home]</a>
 	</div>
+    <!-- Compile from .ms file instead to an html output directly, link download of .ms, .pdf. .ps and .html
     <div class="content">
         <h1>{mtitle}</h1>
         <iframe src={mod_mtitle} width=800 height=800></iframe>
     </div>
     <div class="content" id="content">
+    -->
     '''
 
 def gen_p(content):
@@ -113,7 +115,7 @@ html_payload += gen_head(x_title)
 html_payload += gen_header(x_title, ref_info)
 for x_comment in x_comments:
     html_payload += gen_p(x_comment)
-html_payload += comment_inject()
+#html_payload += comment_inject()
 html_payload += gen_tail()
 
 with open("legacy/livescans/" + x_title + ".html", "w") as html_out:
