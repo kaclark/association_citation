@@ -55,7 +55,7 @@ def gen_header(title, ref_info):
     <body>
 	<div class='teaser-box'>
 	<!--<a href="../index.html"><img class='teaser-img' src='../include/img/pi_over_four.png'></img></a>-->
-	<a href="../index.html">[Home]</a>
+	<a href="../../index.html">[Home]</a>
 	</div>
     <!-- Compile from .ms file instead to an html output directly, link download of .ms, .pdf. .ps and .html
     <div class="content">
