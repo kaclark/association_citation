@@ -1,12 +1,6 @@
 # Particle
 
-This system has two interfaces. One for the writer to look into and another for the reader to view from. Particle is the writer interface.
-
-To get started, ensure you have the Go Frontend Binaries
-```bash
-chmod +x go-installs.sh
-./go-install.sh
-```
+This system has two interfaces. One for the writer to look into and another for the reader to view from. Particle is the writer interface and will be integrated into acme.
 
 Also make sure you have rc, the plan9 shell
 ```bash

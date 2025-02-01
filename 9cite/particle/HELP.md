@@ -2,6 +2,7 @@
 
 Quickstart
 
-```
-rc assoc/run.rc
+begin with
+```bash
+acme
 ```
