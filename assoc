@@ -56,8 +56,8 @@ def gen_tail():
     </html>
     '''
 def FROZEN_gen_download_p(displayname, link, codename):
-    nlink = "routes/" + codename + ".html"
-    rlink = "readable/" + codename + ".html"
+    nlink = "legacy/routes/" + codename + ".html"
+    rlink = "legacy/readable/" + codename + ".html"
     return f'''<a href={link} download={displayname}>{displayname}</a>
         <a href={nlink}><p style="text-align:right">Highlight Stream</p></a>
         <a href={rlink}><p style="text-align:right">Read Online</p></a>
@@ -212,7 +212,7 @@ def gen_readable(pageout, URL):
     output_html += "</div>"
     output_html += gen_tail()
 
-    with open("readable/" + pageout + ".html", "w") as html_out:
+    with open("legacy/readable/" + pageout + ".html", "w") as html_out:
         html_out.write(output_html)
 
 
@@ -235,7 +235,7 @@ def gen_wiki_page(codename):
         wiki += gen_p("coming soon")
     wiki += gen_tail()
 
-    with open("routes/" + codename + ".html", "w") as wiki_out:
+    with open("legacy/routes/" + codename + ".html", "w") as wiki_out:
         wiki_out.write(wiki)
 
 '''
@@ -249,7 +249,7 @@ def gen_book_table():
             name, link, text_type, codename = line.split(",")
             table_content[text_type].append((name, link, codename))
             gen_wiki_page(codename)
-            if not os.path.isfile("readable/" + codename + ".html"):
+            if not os.path.isfile("legacy/readable/" + codename + ".html"):
                 gen_readable(codename, link)
     table += "<h1>Phase 2: Digital Library</h1>" 
     table += "<h1>Papers</h1>"
@@ -275,7 +275,7 @@ def download_table():
             name, link, text_type, codename = line.split(",")
             table_content[text_type].append((name, link, codename))
             gen_wiki_page(codename)
-            if not os.path.isfile("readable/" + codename + ".html"):
+            if not os.path.isfile("legacy/readable/" + codename + ".html"):
                 gen_readable(codename, link)
     table += "<h1>Downloads</h1>" 
 
@@ -318,7 +318,7 @@ def gen_twitter_gallery():
     html_payload += inject_tweets()
     html_payload += gen_tail()
 
-    with open("twitter_gallery.html", "w") as html_out:
+    with open("legacy/twitter_gallery.html", "w") as html_out:
         html_out.write(html_payload)
 
 def refresh():
@@ -359,7 +359,7 @@ def get_table_row(title_task, api):
     #x_year, x_month, x_day = c_date.split("-")
     #cc_date = x_month + "/" + x_day + "/" + x_year[2:]
     #cc_date = get_date_by_comment(title_task.id, api)
-    clink = "livescans/" + content + ".html"
+    clink = "legacy/livescans/" + content + ".html"
     p_content = format_title(content)
     return f'''<tr><td>
     <tr><td><a href={clink}>{p_content}</a></td>
