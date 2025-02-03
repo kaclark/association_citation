@@ -1,0 +1,35 @@
+{
+"css_config": {
+    "filepath": "./data/main.css",
+    "body_style": {
+	"font-family": "CascadiaCode",
+	"word-wrap": "break-word"
+    },
+    "p_style": {
+	"p_align": "left",
+	"p_fontsize": "1.2em",
+	"margin-left": "auto",
+	"margin-right": "auto"
+}, 
+    "h1_style": {
+	"text-align": "center",	
+	"fontsize": "1.5em"
+    },
+    "div_style": {
+        "width": "50em",
+	"padding": "auto",
+	"margin": "auto"
+    },										 "navbar_style": {
+    	"background_color": "#dddddd",	
+	"height": "3.1em"
+    },
+    "bannerimg_style": {
+	"display": "block",
+	"margin-left": "auto",
+	"margin-right": "auto",
+	"width": "100%",
+	"height": "auto"
+    }
+}
+
+}
