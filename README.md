@@ -101,7 +101,7 @@ obabel -:"c1cc(C=O)ccc1C(=O)O" -O out.svg --genalias -xA
 
 Further investigations regarding both the .smi files for SMILES as the standard is outline here http://opensmiles.org/opensmiles.html are to be undertaken. Reference to .smi files from pypy goless channels in order to write models of molecular systems would be an excellent place to begin a computational chemistry of literate programming. It was said by the one who forged tex that the programmer must write for other humans. If I wanted to write for the machines, I would lose the fellow being. Communication must be struggled for at the interface of the systems that the engineers composes and investigates. Intellect which cannot be shared so easily is of low rank and of little majesty. Nous is an ever recursive bounty. The chemist for too long has taken to blackboards and paper and not the teletype interface. Electronics forged these technologies, and yet those who study those intimate dances of the electrons shy away from their rightful throne and altar: the filesystem and its concurrent interface. 
 
-On this question of modelling we are to test the living language by putting into motion what is said here: doi:10.1016/j.tcs.2004.03.066
+On this question of modelling we are to test the living language by putting into motion what is said here: doi:10.1016/j.tcs.2004.03.066 Modelling biochemical pathways through enhanced π-calculus
 
 To offer the reader a glimpse of the sheer sublime awe we are before, let us offer the copypasta:
 
