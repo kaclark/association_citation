@@ -7,7 +7,23 @@ https://kaclark.github.io/association_citation/<br>
 
 This website was one idea long ago; it is undergoing rapid reconstruction!
 
-For now, it is a guide to using the internet in my style.
+For now, it is a mini wiki of major computer engagements that can alter the everyday experience of the computer. We find here
+
+1. Notes on Lightweight Browsers
+2. Computational Chemistry Modelling Project Outline 
+
+With time we should like to find the completion of comptuational chemistry modelling; thereafter also:
+
+1. Continued Fractions as Concurrent Processes
+2. Finite Calculus as Concurrent Processes
+3. Gamma Function as Concurrent Processes
+4. Citational System for Historical Math Literature
+5. Citational System for IBSN Literature
+6. Approximate Modelling of Food as Sets of Molecular Systems
+7. Citational System for Food Barcodes
+8. Citational System for Food History and Evolution
+
+### Narrative Wandering
 
 If there's anything that I have taken a liking to it is style transfer, to breaking loose of the tempo of one song in order to jump out at the color another horizon promises...Computer Literacy and Mathematical Wonder will come to be one in time...
 
