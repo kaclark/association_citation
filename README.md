@@ -108,3 +108,31 @@ To offer the reader a glimpse of the sheer sublime awe we are before, let us off
 We use the pi-calculus to model the evolution of biochemical systems, taking advantage of their similarities with global computation applications. First, we present a reduction semantics for the pi-calculus from which causality and concurrency can be mechanically derived. We prove that our semantics agrees with the causal definitions presented in the literature. We also extend our semantics to model biological compartments. Then, we show the applicability of our proposal on a couple of biological examples.
 
 A network of proteins can be seen as a computing machinery, made of processing agents that cooperate to achieve a common goal. Agents autonomously compute on their own and exchange information each other [51]. This informal description applies as well to concurrent system, that are made of large number of geographically dispersed, possibly mobile and communicating computing agents. This paradigm is now-a-days called global computing. Process calculi are the most popular formalism to describe and study global computing applications. One of the most popular process calculi is the pi-calculus [39]. Regev et al. [52] were the first to use the pi-calculus as a model of biochemical processes, taking advantage of similar experiences in the Petri net -eld[17,18,20] and on the results from process calculi for mobility. They model reactants as pi-calculus processes and biochemical reactions as communications. The authors claim that the pi-calculus permits to better integrate dynamics, molecular and biochemical details. Further work lead to a more precise model [47], based on the stochastic pi-calculus [45], an extension of the original calculus with probabilistic distributions that govern the race conditions. So, also quantitative aspects of reactions can be taken into account. Besides the study of quantitative aspects like the one mentioned above, the literature on concurrency has many proposals on the description of the causal relations between the activities that agents perform, as well as of the relation of independence between actions (concurrency). According to its supporters, causality permits more accurate representations of the behaviour of concurrent systems than classical interleaving representations; in particular, causality seems to play a relevant role in understanding complex biochemical pathways. Also, a single causal representation describes all the behaviour in which independent activities are temporally linearized, thus offering a more concise model. In this paper we offer such a causal extension of the pi-calculus, and we apply it to a couple of biological examples.
+
+With regards to implementing pypy with goless
+
+```bash
+#fedora on dell inspiron
+wget https://downloads.python.org/pypy/pypy3.11-v7.3.19-linux64.tar.bz2
+tar xf pypy3.11-v7.3.19-linux64.tar.bz2
+./pypy3.11-v7.3.19-linux64/bin/pypy -m ensurepip
+./pypy3.11-v7.3.19-linux64/bin/pypy -m pip install -U pip wheel
+./pypy3.11-v7.3.19-linux64/bin/pypy -m pip install goless
+
+#termux fedora proot distro
+wget https://downloads.python.org/pypy/pypy3.11-v7.3.19-aarch64.tar.bz2
+tar xf pypy3.11-v7.3.19-aarch64.tar.bz2
+./pypy3.11-v7.3.19-aarch64/bin/pypy -m ensurepip
+./pypy3.11-v7.3.19-aarch64/bin/pypy -m pip install -U pip wheel
+./pypy3.11-v7.3.19-aarch64/bin/pypy -m pip install goless
+```
+
+To test that this works
+
+```bash
+git clone https://github.com/rgalanakis/goless.git
+cd goless/examples
+#assuming downloads folder or same as pypy download dir
+../../pypy3.11-v7.3.19-aarch64/bin/pypy simple.py
+cat simple.py
+```
