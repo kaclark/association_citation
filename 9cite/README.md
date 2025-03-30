@@ -9,3 +9,9 @@ Because the dialect of C that goes on to become Go was there for plan9, go tools
 For now the website is run from a github page, but in time and with hope the git repo will be hosted from OpenBSD, as will the website. 9cite will also be the staging platform for this movement as well, after which case github will be a mirror
 
 There is a developer frontend written in Shell and Go Binaries and a data processing backend written in the Python Interpreter for Rust Libraries. The developer go interface will be called particle and the backend will be called wave.
+
+---
+
+A word on location:
+
+I have long wished to run association citation from my smartphone's termux. I still will. But I also now want to run it from the athena cluster at MIT for as long as I will have access. This very text is my first test of git pushing to my github repo. Later I will self-host, but for now this will do.
