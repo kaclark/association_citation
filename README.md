@@ -11,6 +11,7 @@ For now, it is a mini wiki of major computer engagements that can alter the ever
 
 1. Notes on Lightweight Browsers
 2. Computational Chemistry Modelling Project Outline 
+3. Pypy setup
 
 With time we should like to find the completion of comptuational chemistry modelling; thereafter also:
 
@@ -62,19 +63,16 @@ surf https://kaclark.github.io/association_citation/
 Association Citation will be revamped to work very well with surf.
 Heads up, ctrl+shift+j/k to resize the zoom!
 
-Okay so a few things I notice when I open up association citation
-1. White and Bright!
-2. Video Works!
-3. PDFs do not work
-4. The text in Spandakarika is much too large
-5. The commentary and highlight text in the Leibniz page is perfect
 
-So we can make this podcast forward, without a doubt. Video embedding will work well.
-For video storage and server hosting, unlisted youtube videos embedded in the website html seem like the most straightforward option. Videos are just too large and if I am posting something on the internet like this I guess it can live on a Google Server without me getting the shivers...
+This website should be podcast forward. Video embedding will work well.
 
-I think I will tone the background color down. Maybe make a dark mode and have a button somewhere for switching between light and dark mode?
+For video storage and server hosting, unlisted youtube videos embedded in the website html seem like the most straightforward option. Videos are just too large and if I am posting something on the internet like this I guess it can live on a Google Server without me getting the shivers...peertube is always an option, and it offers self hosting.
 
 Now the next thing to rejoice over after the suckless surf browser is the typesetting that existed before tex and latex. Algorithms, partially ordered sets, and clean homework are all great, but at AT&T troff was all the rage. Why do we have PDFs? Because the printers traded off with the CPUs; workload moved over to the PC and we got those documents. I wish to provide documents in the smallest footprint possible over radio waves. I never intend to print this text. PDFs are overkill. Manuscripts in the .ms format can be converted to pdf, html, and terminal output with ease with plan9 tools. My output will be very slow for some time as I work on setting up a system for cranking out manuscripts, but I assure the reader that a veritable printing press is on its way...
+
+However, after a long ways of exploring, I came to long for a community. Something that makes open source wonderful is that the long hours and years of desire charted by others play into the access one has. Open Source is where we see a true utility of literacy, where the ability to find and understand is championed over the tendency to create de novo. As a student, I am tortured by redesigning the wheel. I am a scholastic: I do not beleive this torture is suited for the Intellectual. As a true thinker, I ask how others have thought and fight with the pitfalls they already fell into. To find an open source repo: could anything explain my approach to philosophy better than just this! So while I love to rave about the esoteric wisdom of plan9, inferno, and Ada, I cannot continue to isolate myself so. groff and nroff have a history which inspires tears of appreciation on my part, but I have found a new siren which I crash my ship for: Typst. I interject this while I continue to sing the songs of the Bell Labs Siren that so swayed me before this revelation. Having found Bell Labs and BBN, I began to feel that I could see what the origin was for those ideas demanded from me as a student. This was catharsis. The Scholastic in me was pleased. However, typst is much easier to use, and it can triumph over even latex. My only problem with typst as of yet is that the html generation that I have laid my hands upon was challenged by code and math rendering. I would wish, once these features function as my heart desires, to then zim my html to view in a compressed format. I would take snapshots every interval maybe. This would be perfect in my eyes.
+
+### Continued Digressions 
 
 When one reads the documentation of bsky, it becomes clear that a filesystem system would fare well, and where else do we find the best example of this but plan9 and its manifold derivatives? Go Glenda Go...
 
@@ -136,3 +134,23 @@ cd goless/examples
 ../../pypy3.11-v7.3.19-aarch64/bin/pypy simple.py
 cat simple.py
 ```
+
+### A Second Word on Python
+
+The lack of concurrency in Python scandalizes me, and I have tried to claw and yearn for a way to worship the Queen of the Sciences by way of the great serphant. I came to python for machine learning, and I flee it for lack of native concurrency. I yearn for a community, and there is no python concurrency community. The language elixir, built on top of erlang, does have what I am looking for. Yet, I came to python for machine learning, and when I read Google and IBM and Hinton and so many more, I find python in the repos. This is something that I must appreicate clearly. The einstein notation: this is offered to me in python. The importance this should have for Reimannian Philosophy should need little introduction. I cannot flee python for I begin to mourn access to the notation of that Great Reimannian Socialist Albert Einstein. I seek the embrace of elixir but must remain firm in my intimacy for and through python, that great serphant. 
+
+### Concurrency and Ericsson
+
+Bell Labs fell to what? The same thing that happened to Standard Oil. Splintered - destratified. Before Bell Labs fell as hard as the Jesuits after the few decade range around 1770s, Ericsson could not make its way into the American Telecom Market. To them we owe bluetooth, that protocol which I am so ensnared to ever so often! Such glory, and yet in America they could not thrive. This alone should be enough to damn the entire economy. C was the language of Bell Labs. Programming Langugage One, IBMs. Yet the Evil of IBM, multifaceted and complex as it is, may have not been operative in the tower of Babel that Programming suffers. It could have been neglect, misguided opinion, or something less sinster than I would care to accuse it of being. I will give them space and room here, but I know in my heart there is Evil somewhere in the conduct of those International Business Machines, be it Germany or Chile. The crimes signed off by their executives are surely much more grave than the exctinction of Programming Language One.
+
+Erlang was Ericsson's language. Unlike IBM, they have allowed their in house language to thrive beyond their offices. American Telecoms seeded the Original Sin that has ruined programming through a Tower of Babel. The Continential approach must now include Erlang and its Virtual Machine BEAM. Ethics then allows the use of Elixir in Computational Struggle. For Elixir, people have written books on Concurrency. 
+
+I know that I read Rob Pike and I read the Google Deep Learning Research, but I still cannot commit myself to Go and the pypy attempt to fashion a go through python. I cannot be so American. I must relate more to the European, and Elixir deliver this through Erlang. I must have a tradition which is solid, and the heralds of Bluetooth have a special place in my heart.
+
+Is it to be said that for Perl, there were to be many ways to do something, and python came to declare a despotic regime of signs where there is a single proper way to declare. Oh, to think: Deep Learning all in Perl. The C ecosystem delivers much, and I have haunted its software, though more snooping than posting and committing, I admit. I think though, that the Elixir Erlang Continetial Philosophy of Concurrency could do well to please me and invigorate me. Even leetcode can be done in Elixir. 
+
+I need not haunt Google papers so much and deal with Go when I can find all the philosophy of concurrency to please myself in the land of Elixir. Alchemy, Hermeticism, and Clear Algorithms. The Pi Calculus, wonderful as it is, has been surpassed by Raytheon BBN with the Field Calculus. There is a Java Implementation offered. My passion of Elixir leads me to yearn a reimplementation with time...Computational Chemistry in Elixir with the Field Calculus will truly herald the Philosophers Stone: we will have in-silico molecular biology with a rigorous concurrency process theory.
+
+### On Formal Verification
+
+Model Checking in the Tradtion of Late Bell Labs has a theory of the finite autonoma which is astounding and worth deep and careful study. The theory of compilers must be understand as a work within semiotics, and therefore computer science with regards to graph theory as an organon should be viewed firmly within linguistics. This should be declared to have been so long before the new gods of the dense vectors, the wretched and overhyped transformer. I do understand its power though, especially when not yet generative. I am to build the field of the generative flux. I need no pretrained nonsense for my generta. I need only the perfect language for my alchemy. Everything else falls in place. Formal Verification in the SPIN Model Checker as communicated by Gerard Holzmann should be ported to Elixir as well. Software should not be where we begin. Software should be generated, but by tools which keep in mind the proofs: finite transducers and all the rest already understand code generation. Who among us has written their own assembly for something beyond the pedagological? Modex takes this further to generate C code based on the SPIN Models. We must model: software will generate itself. We must understand the algorithms of concurrency, of channels, or whatever primitives we must take up to herald the Field Calculus of Raytheon BBN in Elixir with those insights first brought to C by the like of Holzmann. We must then bring to chemistry in silico formal verification, and use this for the aim of pharmacology, metabolism, nutrition, and whatever else. We are close to a truly universal characteristic language of all dynamical systems. The Neopythagorean Dual between Nous and Bios will be recovered within our Age.
